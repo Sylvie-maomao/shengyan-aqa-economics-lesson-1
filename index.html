@@ -1,0 +1,2838 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>圣岩专属 | AQA Economics Lesson 1 Review</title>
+  <style>
+    :root {
+      --paper: #f4f5f3;
+      --surface: #ffffff;
+      --ink: #17201f;
+      --muted: #5f6967;
+      --line: #d4d9d7;
+      --deep: #133a38;
+      --teal: #087f73;
+      --teal-soft: #e5f3f0;
+      --blue: #265d96;
+      --blue-soft: #eaf1f8;
+      --red: #a64034;
+      --red-soft: #f7ebe8;
+      --gold: #8b6508;
+      --gold-soft: #faf2d9;
+      --green: #44743d;
+      --green-soft: #eaf3e7;
+      --shadow: 0 10px 30px rgba(19, 58, 56, .08);
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+    button, input, textarea { font: inherit; }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    strong { color: var(--deep); }
+    svg { display: block; width: 100%; height: auto; }
+    svg text { font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif; }
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 99;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { top: 10px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      color: white;
+      background: rgba(19, 58, 56, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner {
+      max-width: var(--content);
+      min-height: 62px;
+      margin: auto;
+      padding: 9px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand {
+      min-width: 210px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: #c9ddda;
+      font-size: .73rem;
+      font-weight: 600;
+    }
+    .progress-shell {
+      flex: 1;
+      min-width: 100px;
+      height: 8px;
+      overflow: hidden;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, .18);
+    }
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: #f4c85a;
+      transition: width .25s ease;
+    }
+    .progress-text {
+      min-width: 84px;
+      font-size: .78rem;
+      color: #d9e8e6;
+      text-align: right;
+    }
+    .reset-button {
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: 5px;
+      padding: 7px 10px;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+    }
+    .reset-button:hover { background: rgba(255,255,255,.1); }
+
+    .chapter-nav {
+      position: sticky;
+      top: 62px;
+      z-index: 20;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .chapter-nav-inner {
+      width: max-content;
+      min-width: 100%;
+      max-width: var(--content);
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+    }
+    .chapter-nav-label {
+      align-self: stretch;
+      margin-right: 4px;
+      padding: 11px 13px 9px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background: var(--deep);
+      border-bottom: 3px solid var(--deep);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .chapter-nav a {
+      padding: 11px 13px 9px;
+      color: var(--muted);
+      border-bottom: 3px solid transparent;
+      font-size: .82rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .chapter-nav a:hover,
+    .chapter-nav a.active {
+      color: var(--teal);
+      border-bottom-color: var(--teal);
+    }
+
+    main { overflow: clip; }
+    .hero {
+      color: white;
+      background:
+        linear-gradient(100deg, rgba(19,58,56,.98), rgba(19,58,56,.82)),
+        repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,255,255,.04) 24px 25px);
+    }
+    .hero-inner {
+      max-width: var(--content);
+      min-height: 470px;
+      margin: auto;
+      padding: 68px 20px 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(300px, .8fr);
+      align-items: center;
+      gap: 48px;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #f4c85a;
+      font-size: .76rem;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.12;
+    }
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+      line-height: 1.23;
+    }
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+    h4 {
+      margin-bottom: 7px;
+      font-size: .95rem;
+    }
+    .hero-copy {
+      max-width: 690px;
+      color: #d9e8e6;
+      font-size: 1.05rem;
+    }
+    .hero-parts {
+      max-width: 720px;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid rgba(255,255,255,.22);
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+    .hero-part {
+      min-width: 0;
+      padding: 13px 15px 14px;
+      color: white;
+      border-right: 1px solid rgba(255,255,255,.22);
+      text-decoration: none;
+    }
+    .hero-part:last-child { border-right: 0; }
+    .hero-part:hover { background: rgba(255,255,255,.08); }
+    .hero-part b {
+      display: block;
+      color: #f4c85a;
+      font-size: .82rem;
+      text-transform: uppercase;
+    }
+    .hero-part span {
+      display: block;
+      margin-top: 2px;
+      color: #d9e8e6;
+      font-size: .78rem;
+    }
+    .hero-route {
+      padding-left: 26px;
+      border-left: 3px solid #f4c85a;
+    }
+    .route-step {
+      position: relative;
+      padding: 3px 0 20px 17px;
+    }
+    .route-step:last-child { padding-bottom: 3px; }
+    .route-step::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 9px;
+      width: 11px;
+      height: 11px;
+      border: 3px solid var(--deep);
+      border-radius: 50%;
+      background: #f4c85a;
+    }
+    .route-step strong { color: white; }
+    .route-step span {
+      display: block;
+      color: #c9ddda;
+      font-size: .85rem;
+    }
+    .hero-tip {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      color: #c9ddda;
+      font-size: .84rem;
+    }
+
+    .section {
+      padding: 68px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section:nth-of-type(even) { background: #f9faf9; }
+    .section-inner {
+      max-width: var(--content);
+      margin: auto;
+    }
+    .section-head {
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .section-no {
+      color: var(--teal);
+      font-size: 2.7rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .section-head > div:last-child { min-width: 0; }
+    .section-summary {
+      max-width: 760px;
+      color: var(--muted);
+    }
+    .logic-strip {
+      margin: 22px 0 28px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .logic-step {
+      position: relative;
+      min-height: 92px;
+      padding: 16px 22px;
+      border-right: 1px solid var(--line);
+    }
+    .logic-step:last-child { border-right: 0; }
+    .logic-step:not(:last-child)::after {
+      content: "›";
+      position: absolute;
+      right: -8px;
+      top: 27px;
+      z-index: 2;
+      color: var(--teal);
+      background: var(--surface);
+      font-size: 1.7rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .logic-step b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+    }
+    .logic-step span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .logic-step b,
+    .logic-step span {
+      overflow-wrap: anywhere;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 22px;
+      align-items: start;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .wide-left { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .75fr); }
+    .stack { display: grid; gap: 18px; }
+
+    .definition {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: 6px;
+      background: var(--surface);
+      box-shadow: 0 5px 18px rgba(28, 45, 43, .04);
+    }
+    .definition.red { border-left-color: var(--red); }
+    .definition.blue { border-left-color: var(--blue); }
+    .definition.gold { border-left-color: var(--gold); }
+    .definition.green { border-left-color: var(--green); }
+    .definition-main { padding: 18px 20px 15px; }
+    .term-line {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+    .term-line h3 { margin: 0; }
+    .tag {
+      padding: 2px 7px;
+      border-radius: 3px;
+      color: var(--muted);
+      background: #eef0ef;
+      font-size: .68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .definition-text {
+      margin: 0;
+      color: #263230;
+      font-size: .96rem;
+    }
+    mark.kw {
+      padding: 1px 3px;
+      color: var(--deep);
+      background: #fff0aa;
+      border-bottom: 2px solid #e1b92f;
+    }
+    .keyword-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      border-top: 1px solid var(--line);
+      background: #f8f9f8;
+    }
+    .keyword {
+      min-height: 92px;
+      padding: 13px 15px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .keyword:last-child { border-right: 0; }
+    .keyword b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-size: .79rem;
+    }
+    .definition.red .keyword b { color: var(--red); }
+    .definition.blue .keyword b { color: var(--blue); }
+    .definition.gold .keyword b { color: var(--gold); }
+    .definition.green .keyword b { color: var(--green); }
+    .keyword span {
+      color: var(--muted);
+      font-size: .79rem;
+      line-height: 1.48;
+    }
+    .formula {
+      padding: 18px;
+      border-left: 5px solid var(--blue);
+      background: var(--blue-soft);
+      font-size: 1rem;
+      text-align: center;
+    }
+    .formula code {
+      color: #183f68;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 1.03em;
+      font-weight: 800;
+    }
+    .note, .example, .warning {
+      padding: 15px 18px;
+      border-left: 4px solid var(--teal);
+      background: var(--teal-soft);
+    }
+    .example { border-color: var(--blue); background: var(--blue-soft); }
+    .warning { border-color: var(--red); background: var(--red-soft); }
+    .note p:last-child, .example p:last-child, .warning p:last-child { margin-bottom: 0; }
+    .micro {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    .diagram {
+      margin: 0;
+      padding: 15px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .diagram figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+    .diagram-title {
+      margin-bottom: 9px;
+      font-size: .9rem;
+      font-weight: 800;
+    }
+    .chart-axis { stroke: #596461; stroke-width: 1.8; }
+    .chart-grid { stroke: #dce1df; stroke-width: 1; stroke-dasharray: 4 4; }
+    .chart-demand { fill: none; stroke: var(--blue); stroke-width: 3; }
+    .chart-supply { fill: none; stroke: var(--red); stroke-width: 3; }
+    .chart-accent { fill: none; stroke: var(--teal); stroke-width: 3.5; }
+    .chart-dash { fill: none; stroke: #66716f; stroke-width: 1.5; stroke-dasharray: 5 5; }
+    .chart-point { fill: var(--gold); stroke: white; stroke-width: 2; }
+    .chart-label { fill: #33403e; font-size: 12px; font-weight: 700; }
+    .chart-small { fill: #687370; font-size: 10px; }
+    .chart-zone-blue { fill: rgba(38, 93, 150, .16); }
+    .chart-zone-red { fill: rgba(166, 64, 52, .15); }
+    .chart-zone-gold { fill: rgba(139, 101, 8, .18); }
+
+    .compact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .84rem;
+      background: var(--surface);
+    }
+    .compact-table th,
+    .compact-table td {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .compact-table th {
+      color: var(--deep);
+      background: #edf2f0;
+    }
+    .sign-positive { color: var(--green); font-weight: 850; }
+    .sign-negative { color: var(--red); font-weight: 850; }
+
+    .source-line {
+      margin-top: 16px;
+      padding-top: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .75rem;
+    }
+    .source-line a { overflow-wrap: anywhere; }
+
+    .section.preview {
+      color: var(--ink);
+      background: #eef1ef;
+    }
+    .preview .section-summary, .preview .micro { color: #44504e; }
+    .preview .section-no, .preview .eyebrow { color: #725309; }
+    .preview .section-head { grid-template-columns: 160px minmax(0, 1fr); }
+    .preview .section-no {
+      font-size: 2.15rem;
+      white-space: nowrap;
+    }
+    .preview .definition {
+      color: var(--ink);
+      box-shadow: none;
+    }
+    .preview-map {
+      margin: 24px 0 28px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border: 1px solid #aebbb8;
+      background: var(--surface);
+    }
+    .preview-node {
+      position: relative;
+      min-height: 118px;
+      padding: 16px 14px;
+      border-right: 1px solid #cbd3d1;
+    }
+    .preview-node:last-child { border-right: 0; }
+    .preview-node:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 44px;
+      z-index: 2;
+      width: 24px;
+      color: var(--teal);
+      background: var(--surface);
+      text-align: center;
+      font-weight: 900;
+    }
+    .preview-node b {
+      display: block;
+      margin-bottom: 7px;
+      color: #725309;
+    }
+    .preview-node span {
+      color: #33413f;
+      font-size: .8rem;
+    }
+    .preview .compact-table { color: var(--ink); }
+    .preview-source {
+      padding: 13px 15px;
+      color: #17201f !important;
+      border: 1px solid #aebbb8 !important;
+      background: var(--surface);
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .practice-section { background: #eef1ef; }
+    .practice-group {
+      margin-bottom: 46px;
+      padding-top: 4px;
+    }
+    .practice-group-title {
+      margin-bottom: 16px;
+      padding-bottom: 9px;
+      border-bottom: 2px solid var(--deep);
+    }
+    .practice-coverage {
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--teal);
+      background: var(--teal-soft);
+    }
+    .practice-coverage strong { display: block; margin-bottom: 5px; }
+    .practice-index {
+      position: sticky;
+      top: 106px;
+      z-index: 10;
+      margin: 0 0 30px;
+      padding: 9px 10px;
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      background: rgba(238, 241, 239, .96);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .practice-index a {
+      padding: 6px 10px;
+      color: var(--deep);
+      border: 1px solid #aebbb8;
+      border-radius: 4px;
+      background: white;
+      font-size: .75rem;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .practice-index a:hover { border-color: var(--teal); color: var(--teal); }
+    .legacy-practice { display: none !important; }
+    .practice {
+      margin: 0 0 20px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      box-shadow: 0 6px 20px rgba(28, 45, 43, .05);
+    }
+    .question-meta {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .74rem;
+      font-weight: 750;
+    }
+    .question-id {
+      color: var(--deep);
+      font-size: .82rem;
+      font-weight: 900;
+    }
+    .question-text {
+      margin-bottom: 15px;
+      font-weight: 720;
+    }
+    .question-visual {
+      max-width: 720px;
+      margin: 0 auto 15px;
+    }
+    .question-visual .diagram { padding: 12px; }
+    .question-visual .compact-table { margin-bottom: 0; }
+    .question-sequence {
+      display: inline-block;
+      margin-left: 7px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .options {
+      display: grid;
+      gap: 8px;
+    }
+    .option {
+      min-height: 46px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 24px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .option:hover { border-color: #8aa6a1; background: #f7faf9; }
+    .option input { margin: 4px 0 0; accent-color: var(--teal); }
+    .option.correct {
+      border-color: var(--green);
+      background: var(--green-soft);
+    }
+    .option.incorrect {
+      border-color: var(--red);
+      background: var(--red-soft);
+    }
+    .answer-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .reveal-button {
+      border: 0;
+      border-radius: 4px;
+      padding: 9px 14px;
+      color: white;
+      background: var(--teal);
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .reveal-button:disabled {
+      color: #7d8583;
+      background: #d9dddc;
+      cursor: not-allowed;
+    }
+    .lock-note {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+    .answer-panel {
+      margin-top: 15px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--green);
+      background: var(--green-soft);
+    }
+    .answer-panel[hidden] { display: none; }
+    .answer-panel p:last-child { margin-bottom: 0; }
+    .answer-key {
+      color: var(--green);
+      font-weight: 900;
+    }
+    .official-link {
+      margin-top: 11px;
+      font-size: .74rem;
+    }
+    .essay-text {
+      width: 100%;
+      min-height: 260px;
+      resize: vertical;
+      padding: 14px;
+      color: var(--ink);
+      border: 1px solid #adb7b4;
+      border-radius: 4px;
+      background: #fbfcfb;
+    }
+    .essay-text:focus { outline: 3px solid rgba(8,127,115,.18); border-color: var(--teal); }
+    .essay-tools {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .76rem;
+    }
+    .honesty-check {
+      margin-top: 12px;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      font-size: .84rem;
+    }
+    .honesty-check input { margin-top: 5px; accent-color: var(--teal); }
+    .answer-outline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .answer-outline > div {
+      padding: 12px;
+      border: 1px solid #b9cdb5;
+      background: rgba(255,255,255,.52);
+    }
+    .answer-outline b { display: block; margin-bottom: 4px; }
+    .closing {
+      padding: 54px 20px;
+      color: white;
+      background: var(--deep);
+    }
+    .closing-inner {
+      max-width: var(--content);
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 30px;
+      align-items: center;
+    }
+    .closing h2 { margin-bottom: 8px; }
+    .closing p { margin: 0; color: #c9ddda; }
+    .top-link {
+      padding: 10px 14px;
+      color: white;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 860px) {
+      html { scroll-padding-top: 105px; }
+      .topbar-inner { min-height: 56px; gap: 11px; }
+      .brand { min-width: 0; font-size: .85rem; }
+      .brand small { display: none; }
+      .progress-text { display: none; }
+      .chapter-nav { top: 56px; }
+      .chapter-nav-label { padding-inline: 10px; }
+      .hero-inner, .grid-2, .grid-3, .wide-left { grid-template-columns: 1fr; }
+      .hero-inner { min-height: 0; padding-top: 48px; gap: 30px; }
+      .logic-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .logic-step:nth-child(2) { border-right: 0; }
+      .logic-step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .logic-step:nth-child(2)::after { display: none; }
+      .preview-map { grid-template-columns: 1fr; }
+      .preview-node { min-height: 0; border-right: 0; border-bottom: 1px solid #cbd3d1; }
+      .preview-node:last-child { border-bottom: 0; }
+      .preview-node:not(:last-child)::after {
+        content: "↓";
+        right: 14px;
+        top: auto;
+        bottom: -14px;
+      }
+      .practice-index { top: 98px; }
+      .answer-outline { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .topbar-inner { padding-inline: 12px; }
+      .reset-button { padding: 6px 8px; font-size: .72rem; }
+      .chapter-nav-inner { padding-inline: 7px; }
+      .chapter-nav a { padding-inline: 9px; }
+      .chapter-nav-label { padding-inline: 9px; }
+      .hero-inner, .section { padding-left: 15px; padding-right: 15px; }
+      h1 { font-size: 2rem; }
+      .hero-parts { grid-template-columns: 1fr; }
+      .hero-part { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+      .hero-part:last-child { border-bottom: 0; }
+      .section { padding-top: 52px; padding-bottom: 52px; }
+      .section-head { grid-template-columns: 54px minmax(0,1fr); gap: 11px; }
+      .section-no { font-size: 2rem; }
+      .preview .section-head { grid-template-columns: 1fr; }
+      .preview .section-no { font-size: 1.35rem; }
+      .logic-strip { grid-template-columns: 1fr; }
+      .logic-step { border-right: 0; border-bottom: 1px solid var(--line); }
+      .logic-step:last-child { border-bottom: 0; }
+      .logic-step:not(:last-child)::after { display: none; }
+      .keyword-grid { grid-template-columns: 1fr; }
+      .keyword { min-height: 0; border-right: 0; }
+      .practice { padding: 17px 14px; }
+      .question-meta { align-items: flex-start; }
+      .practice-index { top: 94px; margin-inline: -15px; padding-inline: 15px; }
+      .compact-table { font-size: .74rem; }
+      .compact-table th, .compact-table td { padding: 7px 6px; }
+      .closing-inner { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .topbar, .chapter-nav, .reset-button, .reveal-button, .lock-note, .top-link { display: none !important; }
+      html { scroll-padding-top: 0; }
+      body { background: white; font-size: 10.5pt; }
+      .hero, .section.preview, .closing { color: var(--ink); background: white; }
+      .hero-copy, .route-step span, .preview .section-summary, .preview .micro, .closing p { color: var(--muted); }
+      .section.preview .preview-map,
+      .section.preview .preview-node { border-color: var(--line); }
+      .section.preview .preview-node b { color: var(--gold); }
+      .section.preview .preview-node span { color: var(--ink); }
+      .section.preview .preview-node:not(:last-child)::after { background: white; }
+      .section.preview h3,
+      .section.preview .source-line {
+        color: var(--ink) !important;
+        border-color: var(--line) !important;
+      }
+      .hero-inner { min-height: 0; padding-top: 28px; }
+      .section { padding: 28px 0; break-inside: auto; }
+      .definition, .practice, .diagram { break-inside: avoid; box-shadow: none; }
+      .answer-panel[hidden] { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar" id="top">
+    <div class="topbar-inner">
+      <div class="brand">AQA Economics · 圣岩专属<small>Lesson 1 · Review · Preview · Past-paper practice</small></div>
+      <div class="progress-shell" aria-label="Past-paper practice progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-text" id="progressText">0 / 44 checked</div>
+      <button class="reset-button" id="resetProgress" type="button" title="Clear all saved answers in this file">Reset</button>
+    </div>
+  </header>
+
+  <nav class="chapter-nav" aria-label="Review, preview and practice navigation">
+    <div class="chapter-nav-inner">
+      <span class="chapter-nav-label">Review</span>
+      <a href="#review-1">1 The economic problem</a>
+      <a href="#review-2">2 Specialisation and money</a>
+      <a href="#review-3">3 Economic methodology</a>
+      <a href="#review-4">4 Markets and equilibrium</a>
+      <a href="#review-5">5 Elasticities</a>
+      <a href="#review-6">6 Surplus, tax and failure</a>
+      <a href="#preview">Preview · Next lesson</a>
+      <a href="#practice">Practice · Official questions</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Prepared for 圣岩 · Lesson 1 after-class work</p>
+          <h1 id="pageTitle">圣岩的 Lesson 1 Review, Preview and Practice</h1>
+          <p class="hero-copy">This learning pack has three parts: review the lesson, preview the next topic, and practise with official AQA questions. Complete them in order so each part prepares you for the next.</p>
+          <div class="hero-parts" aria-label="Three parts of this learning pack">
+            <a class="hero-part" href="#review-1"><b>01 Review</b><span>Six Lesson 1 topics</span></a>
+            <a class="hero-part" href="#preview"><b>02 Preview</b><span>Next-lesson concepts</span></a>
+            <a class="hero-part" href="#practice"><b>03 Practice</b><span>Official AQA questions</span></a>
+          </div>
+          <p class="hero-tip">Suggested time: 25 minutes for review · 12 minutes for preview · 25–35 minutes for practice. Yellow highlights show the words that must appear in a precise definition.</p>
+        </div>
+        <div class="hero-route" aria-label="Learning route">
+          <div class="route-step"><strong>Resources are limited</strong><span>Scarcity forces choices</span></div>
+          <div class="route-step"><strong>Choices have a cost</strong><span>A PPF shows opportunity cost</span></div>
+          <div class="route-step"><strong>Markets coordinate choices</strong><span>Price brings demand and supply together</span></div>
+          <div class="route-step"><strong>Responses differ in size</strong><span>PED, YED and XED measure responsiveness</span></div>
+          <div class="route-step"><strong>Markets can fail</strong><span>Tax and intervention may improve allocation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="review-1" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">01</div>
+          <div>
+            <p class="eyebrow">Review · The economic problem</p>
+            <h2>Scarcity means not every want can be met at the same time</h2>
+            <p class="section-summary">Keep one chain in mind: limited resources + unlimited wants → choices must be made → the next-best alternative is given up → opportunity cost arises. A PPF shows this chain.</p>
+          </div>
+        </header>
+
+        <div class="logic-strip" aria-label="The economic problem: causal chain">
+          <div class="logic-step"><b>Limited resources</b><span>Land, labour, capital and enterprise are finite</span></div>
+          <div class="logic-step"><b>Unlimited wants</b><span>People want more goods and services than can be produced</span></div>
+          <div class="logic-step"><b>Choice</b><span>Resources must be allocated between competing uses</span></div>
+          <div class="logic-step"><b>Opportunity cost</b><span>Each choice gives up the next-best alternative</span></div>
+        </div>
+
+        <div class="stack">
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Scarcity</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“The <mark class="kw">fundamental economic problem</mark> that results from <mark class="kw">limited resources</mark> and <mark class="kw">unlimited wants</mark>. It means that <mark class="kw">choices have to be made</mark> which have an <mark class="kw">opportunity cost</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>fundamental economic problem</b><span>Every economy faces it, not only low-income countries.</span></div>
+              <div class="keyword"><b>limited resources</b><span>Factors of production are finite; “limited” does not mean none exist.</span></div>
+              <div class="keyword"><b>unlimited wants</b><span>Wants continue to exceed what existing resources can satisfy.</span></div>
+              <div class="keyword"><b>choices have to be made</b><span>The same resource cannot serve every competing use at once, so a choice is necessary.</span></div>
+              <div class="keyword"><b>opportunity cost</b><span>The next-best use is given up, creating the real cost of the choice.</span></div>
+            </div>
+          </article>
+
+          <div class="grid-2">
+            <article class="definition gold">
+              <div class="definition-main">
+                <div class="term-line"><h3>Choice</h3><span class="tag">Teacher formulation</span></div>
+                <p class="definition-text">The act of <mark class="kw">selecting one option</mark> from <mark class="kw">competing alternatives</mark> because resources cannot satisfy them all.</p>
+              </div>
+              <div class="keyword-grid">
+                <div class="keyword"><b>selecting one option</b><span>Resources are actually committed to one use; this is more than listing preferences.</span></div>
+                <div class="keyword"><b>competing alternatives</b><span>Two uses compete for the same scarce resource; otherwise there is no economic trade-off.</span></div>
+              </div>
+            </article>
+
+            <article class="definition blue">
+              <div class="definition-main">
+                <div class="term-line"><h3>Opportunity cost</h3><span class="tag">AQA definition</span></div>
+                <p class="definition-text">“The <mark class="kw">next best alternative</mark> <mark class="kw">foregone</mark> when a <mark class="kw">choice is made</mark>.”</p>
+              </div>
+              <div class="keyword-grid">
+                <div class="keyword"><b>next best</b><span>Use only the second-best option, not the sum of everything rejected.</span></div>
+                <div class="keyword"><b>alternative</b><span>It must be a genuine use that could have been chosen.</span></div>
+                <div class="keyword"><b>foregone</b><span>It is lost because the current option was chosen; both cannot be obtained.</span></div>
+                <div class="keyword"><b>choice is made</b><span>Opportunity cost arises from choice and is not another name for the money price.</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="grid-2 wide-left">
+            <article class="definition green">
+              <div class="definition-main">
+                <div class="term-line"><h3>Production Possibility Frontier (PPF)</h3><span class="tag">AQA definition</span></div>
+                <p class="definition-text">“It shows the <mark class="kw">various quantities of two goods or services</mark> that <mark class="kw">can be produced</mark>, with the <mark class="kw">current state of technology</mark>, when <mark class="kw">all the available resources are fully employed</mark>.”</p>
+              </div>
+              <div class="keyword-grid">
+                <div class="keyword"><b>various quantities</b><span>Each point on the frontier is a different combination of output, not a single answer.</span></div>
+                <div class="keyword"><b>two goods or services</b><span>The two-dimensional model simplifies a complex economy into two types of output.</span></div>
+                <div class="keyword"><b>can be produced</b><span>It describes current productive capacity and therefore which combinations are feasible.</span></div>
+                <div class="keyword"><b>current technology</b><span>Technology is assumed to remain unchanged when moving along one PPF.</span></div>
+                <div class="keyword"><b>available resources</b><span>The quantity and quality of land, labour, capital and enterprise are given.</span></div>
+                <div class="keyword"><b>fully employed</b><span>Points on the frontier use resources fully and efficiently; points inside show unemployment or inefficiency.</span></div>
+              </div>
+            </article>
+
+            <figure class="diagram">
+              <div class="diagram-title">Read the diagram with three questions: Is it feasible? Is it efficient? What is given up?</div>
+              <svg viewBox="0 0 440 330" role="img" aria-labelledby="ppfTitle ppfDesc">
+                <title id="ppfTitle">Production possibility frontier</title>
+                <desc id="ppfDesc">Consumer goods are on the horizontal axis and capital goods are on the vertical axis. A and B lie on the frontier, U lies inside it, and X lies outside it.</desc>
+                <line class="chart-axis" x1="60" y1="278" x2="410" y2="278"/>
+                <line class="chart-axis" x1="60" y1="278" x2="60" y2="28"/>
+                <path class="chart-accent" d="M82 52 C235.564 98.307 235.564 98.307 382 258"/>
+                <line class="chart-dash" x1="175" y1="82" x2="175" y2="278"/>
+                <line class="chart-dash" x1="175" y1="82" x2="60" y2="82"/>
+                <line class="chart-dash" x1="292" y1="162" x2="292" y2="278"/>
+                <line class="chart-dash" x1="292" y1="162" x2="60" y2="162"/>
+                <circle class="chart-point" cx="175" cy="82" r="7"/>
+                <circle class="chart-point" cx="292" cy="162" r="7"/>
+                <circle fill="#a64034" cx="194" cy="203" r="7"/>
+                <circle fill="#265d96" cx="320" cy="82" r="7"/>
+                <text class="chart-label" x="182" y="73">A</text>
+                <text class="chart-label" x="300" y="154">B</text>
+                <text class="chart-label" x="202" y="224">U</text>
+                <text class="chart-label" x="329" y="75">X</text>
+                <text class="chart-small" x="187" y="299">Consumer goods</text>
+                <text class="chart-small" transform="translate(18 212) rotate(-90)">Capital goods</text>
+                <text class="chart-small" x="95" y="43">PPF</text>
+              </svg>
+              <figcaption><strong>A and B:</strong> efficient and feasible; the opportunity cost of moving from A to B is the capital goods foregone. <strong>U:</strong> feasible but inefficient. <strong>X:</strong> currently infeasible. More resources or better technology can shift the whole PPF outwards.</figcaption>
+            </figure>
+          </div>
+
+          <div class="example">
+            <h3>Real example: NHS operating-theatre time</h3>
+            <p>An operating theatre has room for only one main use on Friday afternoon. If four cataract operations are chosen and the next-best option is one heart operation, the opportunity cost is <strong>the one heart operation foregone</strong>. It is not the theatre rent or the total of every other possible operation.</p>
+          </div>
+        </div>
+
+        <div class="source-line">Definition source: AQA, <a href="../../AQA%E5%AE%98%E6%96%B9%E5%A4%A7%E7%BA%B2%E4%B8%8E%E6%95%99%E6%9D%90/%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/AQA-7136-%E5%AE%98%E6%96%B9%E6%9C%AF%E8%AF%AD%E8%A1%A8-2024.pdf" target="_blank">A-level Economics 7136 Subject Specific Vocabulary (2024)</a>. “Choice” is a teacher formulation used here to connect the AQA concepts.</div>
+      </div>
+    </section>
+
+    <section class="section" id="review-2" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">02</div>
+          <div>
+            <p class="eyebrow">Review · Specialisation and exchange</p>
+            <h2>Specialisation raises output, while exchange shares the gains</h2>
+            <p class="section-summary">Specialisation means concentrating resources on a narrower range of tasks. It usually raises productivity, but it also makes workers, firms and countries more interdependent.</p>
+          </div>
+        </header>
+
+        <div class="grid-2">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Specialisation</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“Where <mark class="kw">firms, regions, countries or factors of production</mark> <mark class="kw">concentrate on producing</mark> a <mark class="kw">particular good or service</mark>, or carrying out a <mark class="kw">particular task</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>firms, regions, countries or factors</b><span>Specialisation can occur at the level of a worker, firm, region or country.</span></div>
+              <div class="keyword"><b>concentrate</b><span>Resources focus on a narrower range instead of being spread evenly across every task.</span></div>
+              <div class="keyword"><b>particular good or service</b><span>For example, a country may concentrate on financial services or semiconductors.</span></div>
+              <div class="keyword"><b>particular task</b><span>Under division of labour, a worker completes only one part of the production process.</span></div>
+            </div>
+          </article>
+
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Money</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“Primarily a <mark class="kw">medium of exchange</mark> or <mark class="kw">means of payment</mark>, but also a <mark class="kw">store of value</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>medium of exchange</b><span>Buyers exchange generally accepted money for goods, avoiding the double coincidence of wants required by barter.</span></div>
+              <div class="keyword"><b>means of payment</b><span>Money settles transactions and debts, allowing exchange to take place more flexibly over time.</span></div>
+              <div class="keyword"><b>store of value</b><span>Purchasing power can be carried into the future, although high inflation weakens this function.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="logic-strip">
+          <div class="logic-step"><b>Repeated task</b><span>Practice improves skill in a narrow task</span></div>
+          <div class="logic-step"><b>Less switching</b><span>Less time is lost changing tasks and tools</span></div>
+          <div class="logic-step"><b>Capital matched</b><span>Specialised machinery can fit a particular task</span></div>
+          <div class="logic-step"><b>Higher productivity</b><span>The same time and resources produce more output</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3>Why does money make exchange easier?</h3>
+            <table class="compact-table">
+              <thead><tr><th>Problem with barter</th><th>How money solves it</th></tr></thead>
+              <tbody>
+                <tr><td>You want bread, but the baker may not want your apples.</td><td>Sell the apples for money and use the money to buy bread; the two wants no longer need to match.</td></tr>
+                <tr><td>A bicycle cannot easily be divided into exactly 400 units of bread.</td><td>A common unit of account makes the prices of different goods comparable.</td></tr>
+                <tr><td>Apples rot, so they store purchasing power poorly.</td><td>Relatively stable money can carry purchasing power into the future.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="warning">
+            <h3>Specialisation also has costs</h3>
+            <p><strong>Benefits:</strong> greater skill, less switching time, easier mechanisation and larger scale.<br><strong>Costs:</strong> repetitive work, narrower skills and more interdependent supply chains; disruption in one stage can affect other producers.</p>
+            <p class="micro">In an exam, explain the mechanism instead of listing points: “repetition → skill improves → output per worker per hour rises”.</p>
+          </div>
+        </div>
+
+        <div class="source-line">Definition source: AQA Subject Specific Vocabulary (2024), “Specialisation” and “Money”.</div>
+      </div>
+    </section>
+
+    <section class="section" id="review-3" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">03</div>
+          <div>
+            <p class="eyebrow">Review · Methodology of economics</p>
+            <h2>Separate testable claims from judgements about what ought to happen</h2>
+            <p class="section-summary">Economists use observations to frame questions, assumptions to isolate relationships and evidence to test explanations. The difference between positive and normative statements is not whether a claim is correct, but whether it contains a value judgement.</p>
+          </div>
+        </header>
+
+        <div class="grid-2">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Positive statement</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“A statement that <mark class="kw">does not include a value judgement</mark> and <mark class="kw">can be tested</mark> against the <mark class="kw">facts or evidence</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>does not include value judgement</b><span>It does not depend on moral claims such as good, bad, fair or ought.</span></div>
+              <div class="keyword"><b>can be tested</b><span>Evidence can support or reject it in principle; the statement can still be false.</span></div>
+              <div class="keyword"><b>facts or evidence</b><span>Data, natural experiments, surveys and observations can all be used to test it.</span></div>
+            </div>
+          </article>
+
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Normative statement</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“A statement that <mark class="kw">includes a value judgement</mark> and <mark class="kw">cannot be refuted just by looking at data or evidence</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>includes value judgement</b><span>It states what is better, fairer or ought to happen.</span></div>
+              <div class="keyword"><b>cannot be refuted just by data</b><span>Data can show consequences, but cannot decide whether society should value equity, freedom or efficiency most.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="definition gold">
+            <div class="definition-main">
+              <div class="term-line"><h3>Assumption</h3><span class="tag">Teacher formulation</span></div>
+              <p class="definition-text">A <mark class="kw">simplifying condition</mark> held to be true so economists can <mark class="kw">isolate a relationship</mark> and build a model.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>simplifying condition</b><span>Some real-world complexity is temporarily held constant; this does not claim reality always works that way.</span></div>
+              <div class="keyword"><b>isolate a relationship</b><span>For example, ceteris paribus holds other determinants of demand constant to study a price change.</span></div>
+            </div>
+          </article>
+
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Observation</h3><span class="tag">Teacher formulation</span></div>
+              <p class="definition-text">A <mark class="kw">recorded pattern or event</mark> in the real world that provides <mark class="kw">evidence</mark> for forming or testing an economic explanation.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>recorded pattern or event</b><span>It must be describable or measurable rather than a vague impression.</span></div>
+              <div class="keyword"><b>evidence</b><span>An observation may fit a theory, but a single before-and-after change rarely proves causation.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-2 wide-left">
+          <div class="logic-strip" style="grid-template-columns:repeat(4,minmax(0,1fr)); margin:0;">
+            <div class="logic-step"><b>Observe</b><span>Identify a price or behaviour pattern</span></div>
+            <div class="logic-step"><b>Hypothesise</b><span>Propose a testable mechanism</span></div>
+            <div class="logic-step"><b>Assume</b><span>Hold other important factors constant</span></div>
+            <div class="logic-step"><b>Test</b><span>Compare the prediction with evidence</span></div>
+          </div>
+          <div class="example">
+            <h3>Quick check</h3>
+            <p><strong>Positive:</strong> “The average sugar content of drinks covered by the levy fell after it was introduced.” This can be tested with data.<br><strong>Normative:</strong> “The government should increase the sugar levy.” The word “should” introduces a value judgement.</p>
+          </div>
+        </div>
+
+        <div class="note">
+          <h3>Limits of evidence: correlation does not automatically prove causation</h3>
+          <p>The UK government reported a <strong>46%</strong> fall in the average sugar content of drinks covered by the levy between 2015 and 2020. This is observable positive evidence. A possible mechanism is “higher sugar content → larger tax liability → stronger reward for reformulation”. To claim that the levy caused the whole 46% fall, however, we also need a credible <strong>counterfactual</strong>: what would have happened without the policy.</p>
+          <p class="source-line">Official evidence: HM Treasury / HMRC, <a href="https://www.gov.uk/government/consultations/strengthening-the-soft-drinks-industry-levy/strengthening-the-soft-drinks-industry-levy-consultation#executive-summary" target="_blank" rel="noreferrer">Strengthening the Soft Drinks Industry Levy consultation, Executive summary</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="review-4" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">04</div>
+          <div>
+            <p class="eyebrow">Review · Markets, demand and supply</p>
+            <h2>A market is an arrangement that brings buyers and sellers together</h2>
+            <p class="section-summary">A price change causes movement along a curve; a change in any other determinant shifts the whole curve. At equilibrium, the two quantities are equal and price has no tendency to change.</p>
+          </div>
+        </header>
+
+        <article class="definition green">
+          <div class="definition-main">
+            <div class="term-line"><h3>Market</h3><span class="tag">Teacher formulation</span></div>
+            <p class="definition-text">An <mark class="kw">arrangement</mark> through which <mark class="kw">buyers and sellers interact</mark> to exchange a good, service or factor of production and <mark class="kw">determine price and quantity</mark>.</p>
+          </div>
+          <div class="keyword-grid">
+            <div class="keyword"><b>arrangement</b><span>It may be a physical shop, an online platform or a labour market; it need not have a fixed location.</span></div>
+            <div class="keyword"><b>buyers and sellers interact</b><span>Demanders and suppliers interact through offers, choices and transactions.</span></div>
+            <div class="keyword"><b>determine price and quantity</b><span>The interaction produces a market price and quantity traded; demand alone does not determine them.</span></div>
+          </div>
+        </article>
+
+        <div class="grid-2" style="margin-top:22px;">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Demand curve</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“The <mark class="kw">relationship between price and quantity demanded</mark> of a good or service, <mark class="kw">in a given period of time</mark>, when <mark class="kw">other things that affect demand are held constant</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>price and quantity demanded</b><span>They are normally inversely related; a price change causes movement along the demand curve.</span></div>
+              <div class="keyword"><b>given period of time</b><span>Quantity demanded needs a time period, such as 2,000 cups per week.</span></div>
+              <div class="keyword"><b>other things held constant</b><span>Income, preferences and the prices of substitutes are fixed: ceteris paribus.</span></div>
+            </div>
+          </article>
+
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Supply curve</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“The <mark class="kw">relationship between price and quantity supplied</mark> of a good or service, <mark class="kw">in a given period of time</mark>, when <mark class="kw">other things that affect supply are held constant</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>price and quantity supplied</b><span>They are normally positively related; a higher price increases the reward from extra production.</span></div>
+              <div class="keyword"><b>given period of time</b><span>Quantity supplied must also refer to a clear time period.</span></div>
+              <div class="keyword"><b>other things held constant</b><span>Changes in costs, technology, taxes or weather shift the whole supply curve.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-2 wide-left" style="margin-top:22px;">
+          <figure class="diagram">
+            <div class="diagram-title">An increase in demand raises both equilibrium price and equilibrium quantity</div>
+            <svg viewBox="0 0 560 330" role="img" aria-labelledby="dsTitle dsDesc">
+              <title id="dsTitle">Market equilibrium after an increase in demand</title>
+              <desc id="dsDesc">The demand curve shifts right from D1 to D2. The new equilibrium price and quantity are both higher than before.</desc>
+              <line class="chart-axis" x1="62" y1="280" x2="526" y2="280"/>
+              <line class="chart-axis" x1="62" y1="280" x2="62" y2="25"/>
+              <line class="chart-supply" x1="105" y1="247.2" x2="468" y2="53.2"/>
+              <line class="chart-demand" x1="105" y1="31" x2="435" y2="251"/>
+              <line class="chart-accent" x1="193" y1="20" x2="520" y2="238"/>
+              <circle class="chart-point" cx="285" cy="151" r="7"/>
+              <circle class="chart-point" cx="343" cy="120" r="7"/>
+              <line class="chart-dash" x1="62" y1="151" x2="285" y2="151"/>
+              <line class="chart-dash" x1="285" y1="151" x2="285" y2="280"/>
+              <line class="chart-dash" x1="62" y1="120" x2="343" y2="120"/>
+              <line class="chart-dash" x1="343" y1="120" x2="343" y2="280"/>
+              <text class="chart-label" x="471" y="50">S</text>
+              <text class="chart-label" x="427" y="266">D₁</text>
+              <text class="chart-label" x="508" y="255">D₂</text>
+              <text class="chart-label" x="294" y="146">E₁</text>
+              <text class="chart-label" x="352" y="114">E₂</text>
+              <text class="chart-small" x="20" y="156">P₁</text>
+              <text class="chart-small" x="20" y="124">P₂</text>
+              <text class="chart-small" x="278" y="300">Q₁</text>
+              <text class="chart-small" x="337" y="300">Q₂</text>
+              <text class="chart-small" x="274" y="323">Quantity</text>
+              <text class="chart-small" transform="translate(8 180) rotate(-90)">Price</text>
+            </svg>
+            <figcaption>After demand shifts right, excess demand appears at the original price P₁. Competition between buyers raises the price until the market reaches E₂. Full chain: <strong>D↑ → shortage at old price → P↑ → contraction along D₂ + extension along S → Qd = Qs</strong>.</figcaption>
+          </figure>
+
+          <article class="definition gold">
+            <div class="definition-main">
+              <div class="term-line"><h3>Equilibrium market price</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“The price at which <mark class="kw">quantity demanded equals quantity supplied</mark> and there is <mark class="kw">no tendency for the price to change</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>Qd = Qs</b><span>The planned quantity bought equals the planned quantity sold; both sides determine equilibrium.</span></div>
+              <div class="keyword"><b>no tendency to change</b><span>There is no excess demand to raise price and no excess supply to lower it.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <h3 style="margin-top:30px;">How are markets linked? First identify whether the link works through demand or supply</h3>
+        <div class="grid-3">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Competitive demand</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">Demand for one product rises while demand for the other <mark class="kw">decreases</mark>: the goods are <mark class="kw">substitutes</mark>.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>substitutes</b><span>A rise in the price of butter may increase demand for margarine; XED is normally positive.</span></div></div>
+          </article>
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Joint demand</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">Two products are <mark class="kw">demanded together</mark>; demand for one is <mark class="kw">directly related</mark> to demand for the other.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>demanded together</b><span>A fall in printer prices may increase demand for ink cartridges; complements normally have negative XED.</span></div></div>
+          </article>
+          <article class="definition gold">
+            <div class="definition-main">
+              <div class="term-line"><h3>Derived demand</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">Demand for a product or factor is <mark class="kw">determined by demand for a different product</mark>.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>determined by another demand</b><span>Greater demand for electric vehicles raises demand for battery engineers and lithium.</span></div></div>
+          </article>
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Composite demand</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">A product has <mark class="kw">more than one use</mark>; more demand for one use leaves <mark class="kw">less supply available elsewhere</mark>.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>one input, several uses</b><span>Using more milk for cheese can leave less milk available for butter.</span></div></div>
+          </article>
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Joint supply</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">Output of one product also results in the <mark class="kw">output of a different product</mark>.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>one process, several outputs</b><span>Raising more sheep increases both mutton output and wool supply.</span></div></div>
+          </article>
+          <div class="note">
+            <h3>Writing a chain of analysis</h3>
+            <p>Start with <strong>the change in the first market</strong>, then state the relationship between the goods, and finish with <strong>the curve, price and quantity in the second market</strong>. Do not jump straight to the conclusion.</p>
+          </div>
+        </div>
+
+        <div class="source-line">AQA definition source: Demand curve, Supply curve, Equilibrium market price, Joint demand, Competitive demand, Composite demand, Derived demand and Joint supply, AQA Subject Specific Vocabulary (2024). “Market” is a teacher formulation.</div>
+      </div>
+    </section>
+
+    <section class="section" id="review-5" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">05</div>
+          <div>
+            <p class="eyebrow">Review · Elasticities</p>
+            <h2>Elasticity measures how responsive one variable is to another</h2>
+            <p class="section-summary">The denominator is own price for PED, income for YED and another product’s price for XED. Write the formula first, interpret the magnitude or sign, and then explain the economic relationship.</p>
+          </div>
+        </header>
+
+        <div class="grid-3">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Price elasticity of demand (PED)</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">A measure of the <mark class="kw">extent</mark> to which <mark class="kw">quantity demanded</mark> changes in response to a change in the product’s <mark class="kw">own price</mark>.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>extent</b><span>It measures the proportionate response, not only its direction.</span></div>
+              <div class="keyword"><b>quantity demanded</b><span>The numerator is the percentage change in quantity demanded.</span></div>
+              <div class="keyword"><b>own price</b><span>The denominator is the percentage change in the price of the same product.</span></div>
+            </div>
+          </article>
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Income elasticity of demand (YED)</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">A measure of the <mark class="kw">extent</mark> to which <mark class="kw">quantity demanded</mark> changes in response to a change in <mark class="kw">income</mark>.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>income</b><span>The denominator is a change in consumer income, not the product’s price.</span></div>
+              <div class="keyword"><b>sign matters</b><span>A positive value indicates a normal good; a negative value indicates an inferior good.</span></div>
+            </div>
+          </article>
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Cross elasticity of demand (XED)</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">A measure of the <mark class="kw">extent</mark> to which demand for one product changes in response to a change in the <mark class="kw">price of a different product</mark>.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>different product</b><span>The numerator is quantity demanded of product A; the denominator is the price of product B.</span></div>
+              <div class="keyword"><b>sign shows relationship</b><span>A positive value indicates substitutes, a negative value indicates complements, and a value near zero indicates a weak relationship.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-3" style="margin-top:22px;">
+          <div class="formula"><code>PED = %ΔQd ÷ %ΔP</code><br><span class="micro">Usually negative; classifications normally use |PED|</span></div>
+          <div class="formula"><code>YED = %ΔQd ÷ %ΔY</code><br><span class="micro">The sign distinguishes normal from inferior goods</span></div>
+          <div class="formula"><code>XED<sub>A,B</sub> = %ΔQd<sub>A</sub> ÷ %ΔP<sub>B</sub></code><br><span class="micro">The sign distinguishes substitutes from complements</span></div>
+        </div>
+
+        <div class="grid-2" style="margin-top:22px;">
+          <div>
+            <h3>Interpreting the result</h3>
+            <table class="compact-table">
+              <thead><tr><th>Result</th><th>Interpretation</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td>PED = −0.4</td><td>|PED| &lt; 1, price inelastic</td><td>A 1% price change causes a less than 1% change in Qd in the opposite direction</td></tr>
+                <tr><td>PED = −1.8</td><td>|PED| &gt; 1, price elastic</td><td>The percentage change in Qd is greater than the percentage price change</td></tr>
+                <tr><td>YED = +1.6</td><td>Normal and income elastic</td><td>Demand grows faster than income, as is common for a luxury</td></tr>
+                <tr><td>YED = −0.3</td><td>Inferior good</td><td>Demand falls as income rises</td></tr>
+                <tr><td>XED = +2.0</td><td>Relatively strong substitutes</td><td>A rise in the price of B causes a marked increase in demand for A</td></tr>
+                <tr><td>XED = −0.7</td><td>Complements</td><td>A rise in the price of B reduces demand for A</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="stack">
+            <div class="example">
+              <h3>PED and total revenue</h3>
+              <p><strong>Elastic demand:</strong> a price fall causes a larger percentage rise in Qd, so TR rises.<br><strong>Inelastic demand:</strong> a price rise causes a smaller percentage fall in Qd, so TR rises.</p>
+              <p class="micro">TR = P × Q. Compare the percentage changes in P and Q rather than memorising the conclusion alone.</p>
+            </div>
+            <div class="warning">
+              <h3>Calculation trap</h3>
+              <p>A percentage change must be divided by the <strong>original value</strong>. If price rises from £0.80 to £0.84, the change is 0.04/0.80 = 5%, not 4%. A rise in quantity from 20,000 to 32,500 is 62.5%. Therefore, XED = 62.5%/5% = +12.5.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="source-line">Definition source: AQA Subject Specific Vocabulary (2024), Price elasticity of demand, Income elasticity of demand and Cross elasticity of demand.</div>
+      </div>
+    </section>
+
+    <section class="section" id="review-6" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">06</div>
+          <div>
+            <p class="eyebrow">Review · Welfare, tax and market failure</p>
+            <h2>Market prices create surplus; taxes redistribute it; market failure misallocates resources</h2>
+            <p class="section-summary">Producer surplus is not profit. An indirect tax raises production costs and shifts supply left. The government receives revenue from transactions that still take place, while the lost gains from trades that disappear form deadweight loss.</p>
+          </div>
+        </header>
+
+        <div class="grid-2">
+          <article class="definition blue">
+            <div class="definition-main">
+              <div class="term-line"><h3>Producer surplus (PS)</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“The <mark class="kw">difference</mark> between the <mark class="kw">price a firm actually receives</mark> and the price it would be <mark class="kw">willing and able to supply</mark> the product for.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>difference</b><span>Compare the actual price with the minimum acceptable price for each unit, then add the amounts.</span></div>
+              <div class="keyword"><b>actually receives</b><span>In a competitive market, this is normally the market equilibrium price.</span></div>
+              <div class="keyword"><b>willing and able to supply</b><span>The supply curve shows the minimum price required to produce each additional unit.</span></div>
+            </div>
+          </article>
+
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Indirect tax</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“A tax <mark class="kw">levied on spending</mark>. The burden of an indirect tax <mark class="kw">can be passed on</mark> to someone else, for example by <mark class="kw">raising the price</mark> of the product.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>levied on spending</b><span>It is charged when a good or service is bought, for example VAT or a specific tax per unit.</span></div>
+              <div class="keyword"><b>can be passed on</b><span>A legal duty on firms to pay the tax does not mean firms bear the whole economic burden.</span></div>
+              <div class="keyword"><b>raising the price</b><span>Firms may pass some of the burden to consumers; the extent depends on PED and PES.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-2 wide-left" style="margin-top:22px;">
+          <figure class="diagram">
+            <div class="diagram-title">A specific tax shifts S upwards to S + tax</div>
+            <svg viewBox="0 0 620 360" role="img" aria-labelledby="taxTitle taxDesc">
+              <title id="taxTitle">Indirect tax, tax revenue and surplus</title>
+              <desc id="taxDesc">After the tax, the supply curve shifts upwards, the consumer price rises, the net producer price falls and quantity falls. The rectangle represents government tax revenue.</desc>
+              <line class="chart-axis" x1="68" y1="306" x2="580" y2="306"/>
+              <line class="chart-axis" x1="68" y1="306" x2="68" y2="28"/>
+              <line class="chart-demand" x1="110" y1="52" x2="520" y2="276"/>
+              <line class="chart-supply" x1="112" y1="270" x2="506" y2="63"/>
+              <line class="chart-accent" x1="112" y1="210" x2="455" y2="31"/>
+              <rect class="chart-zone-gold" x="68" y="133" width="191" height="60"/>
+              <polygon class="chart-zone-red" points="259,133 314,164 259,193"/>
+              <line class="chart-dash" x1="68" y1="133" x2="259" y2="133"/>
+              <line class="chart-dash" x1="68" y1="193" x2="259" y2="193"/>
+              <line class="chart-dash" x1="259" y1="133" x2="259" y2="306"/>
+              <line class="chart-dash" x1="314" y1="164" x2="314" y2="306"/>
+              <text class="chart-label" x="459" y="31">S + tax</text>
+              <text class="chart-label" x="507" y="63">S</text>
+              <text class="chart-label" x="521" y="286">D</text>
+              <text class="chart-label" x="164" y="157" text-anchor="middle">
+                <tspan x="164">Government tax</tspan>
+                <tspan x="164" dy="18">revenue</tspan>
+              </text>
+              <text class="chart-label" x="269" y="168">DWL</text>
+              <text class="chart-small" x="22" y="137">Pᶜ</text>
+              <text class="chart-small" x="22" y="197">Pᵖ</text>
+              <text class="chart-small" x="251" y="328">Q₁</text>
+              <text class="chart-small" x="306" y="328">Q₀</text>
+              <text class="chart-small" x="284" y="351">Quantity</text>
+              <text class="chart-small" transform="translate(19 192) rotate(-90)">Price / cost</text>
+            </svg>
+            <figcaption>Q₀ is the equilibrium quantity before tax and Q₁ is the quantity after tax. Consumers pay Pᶜ, while producers receive Pᵖ net of tax; the vertical gap is the tax per unit. The yellow rectangle is government revenue and the red triangle is the deadweight loss caused by the fall in transactions.</figcaption>
+          </figure>
+          <div class="stack">
+            <div class="formula"><code>Government revenue = tax per unit × quantity sold after tax</code></div>
+            <div class="note">
+              <h3>Relative elasticity determines tax incidence</h3>
+              <p>The more price inelastic demand is, the harder it is for consumers to avoid the tax by buying less, so consumers usually bear a larger share. When demand is more elastic, firms find it harder to raise price and producers bear more of the burden.</p>
+            </div>
+            <div class="warning">
+              <h3>PS ≠ profit</h3>
+              <p>Producer surplus is the area by which market price exceeds the minimum supply price. Profit also deducts fixed costs, so the two terms are not interchangeable.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:22px;">
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Market failure</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“When markets operating <mark class="kw">without government intervention</mark> result in a <mark class="kw">misallocation of resources</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>without government intervention</b><span>Begin with the free-market outcome, then judge whether it differs from the social optimum.</span></div>
+              <div class="keyword"><b>misallocation of resources</b><span>Too much, too little or none of the output society needs is produced.</span></div>
+            </div>
+          </article>
+
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Merit good</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">“A product that <mark class="kw">society judges to be especially worthwhile</mark> and is likely to be <mark class="kw">underconsumed</mark> because the <mark class="kw">benefits are not always fully appreciated</mark>.”</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>society judges worthwhile</b><span>The definition contains a value judgement; education and vaccines are common examples, depending on context.</span></div>
+              <div class="keyword"><b>underconsumed</b><span>Free-market consumption is below the level society considers desirable.</span></div>
+              <div class="keyword"><b>benefits not fully appreciated</b><span>Missing information, short-term thinking or cognitive bias leads consumers to undervalue future or external benefits.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="logic-strip">
+          <div class="logic-step"><b>Benefit underestimated</b><span>Consumers focus only on the immediate cost</span></div>
+          <div class="logic-step"><b>Private demand too low</b><span>Willingness to pay is lower than with full information</span></div>
+          <div class="logic-step"><b>Market Q too low</b><span>Underconsumption occurs in the free market</span></div>
+          <div class="logic-step"><b>Intervention</b><span>Subsidies, information or direct provision can raise consumption</span></div>
+        </div>
+
+        <div class="example">
+          <h3>Example: vaccination</h3>
+          <p>A person may underestimate the future private benefit of avoiding illness and may overlook the external benefit of reducing transmission to others. Market demand and consumption may therefore fall below the social optimum. Information campaigns can improve awareness, subsidies can lower the consumer price, and direct government provision can also address ability to pay. The effectiveness of each policy still depends on its cost, implementation and the risk of government failure.</p>
+        </div>
+
+        <div class="source-line">Definition source: AQA Subject Specific Vocabulary (2024), Producer surplus, Indirect tax, Market failure and Merit good.</div>
+      </div>
+    </section>
+
+    <section class="section preview" id="preview" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">NEXT</div>
+          <div>
+            <p class="eyebrow">Preview · Individual economic decision making</p>
+            <h2>Next lesson: what changes when people are not fully rational?</h2>
+            <p class="section-summary">The aim is not to memorise a list of behavioural terms. Follow one complete chain: how the traditional model predicts choice → why information and psychological limits make those predictions less reliable → how choice architecture changes behaviour without removing choice.</p>
+          </div>
+        </header>
+
+        <div class="preview-map" aria-label="Next-lesson concept map">
+          <div class="preview-node"><b>1 Rational choice</b><span>Use available information to select the option that maximises welfare</span></div>
+          <div class="preview-node"><b>2 Utility</b><span>Satisfaction from consumption; consumers aim to maximise total utility</span></div>
+          <div class="preview-node"><b>3 Diminishing MU</b><span>As consumption rises, each extra unit normally adds less satisfaction</span></div>
+          <div class="preview-node"><b>4 Behavioural limits</b><span>Incomplete information, limited calculation, weak self-control and bias can move choices away from the optimum</span></div>
+          <div class="preview-node"><b>5 Nudge</b><span>Change how choices are presented while preserving freedom of choice</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="stack">
+            <article class="definition blue">
+              <div class="definition-main">
+                <div class="term-line"><h3>Rational economic decision making</h3><span class="tag">AQA definition</span></div>
+                <p class="definition-text">Using <mark class="kw">all available information</mark> to select the <mark class="kw">best option</mark> to <mark class="kw">maximise the welfare</mark> of the decision maker.</p>
+              </div>
+              <div class="keyword-grid">
+                <div class="keyword"><b>all available information</b><span>The decision maker gathers and correctly processes the relevant costs and benefits.</span></div>
+                <div class="keyword"><b>best option</b><span>The option is not merely acceptable; it is the best after comparison.</span></div>
+                <div class="keyword"><b>maximise welfare</b><span>A consumer seeks the greatest satisfaction within a budget constraint.</span></div>
+              </div>
+            </article>
+            <article class="definition green">
+              <div class="definition-main">
+                <div class="term-line"><h3>Marginal utility (MU)</h3><span class="tag">AQA definition</span></div>
+                <p class="definition-text">The <mark class="kw">change in total utility</mark> from consuming <mark class="kw">one more or one fewer unit</mark>.</p>
+              </div>
+              <div class="keyword-grid">
+                <div class="keyword"><b>change in total utility</b><span>MU is the change in total satisfaction, not total satisfaction itself.</span></div>
+                <div class="keyword"><b>one more / fewer</b><span>“Marginal” always focuses on the change from the next unit.</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div>
+            <h3>Diminishing marginal utility: a pizza example</h3>
+            <table class="compact-table">
+              <thead><tr><th>Pizza slices</th><th>Total utility</th><th>Marginal utility</th><th>Interpretation</th></tr></thead>
+              <tbody>
+                <tr><td>0</td><td>0</td><td>—</td><td>Very hungry</td></tr>
+                <tr><td>1</td><td>20</td><td>+20</td><td>The first slice has high value</td></tr>
+                <tr><td>2</td><td>35</td><td>+15</td><td>Satisfaction still rises, but by less</td></tr>
+                <tr><td>3</td><td>45</td><td>+10</td><td>Total utility continues to rise</td></tr>
+                <tr><td>4</td><td>50</td><td>+5</td><td>Nearly full</td></tr>
+                <tr><td>5</td><td>50</td><td>0</td><td>Total utility is at its maximum</td></tr>
+                <tr><td>6</td><td>46</td><td>−4</td><td>One more slice reduces satisfaction</td></tr>
+              </tbody>
+            </table>
+            <div class="formula" style="margin-top:14px;"><code>MU = ΔTU ÷ ΔQ</code></div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:22px;">
+          <article class="definition gold">
+            <div class="definition-main">
+              <div class="term-line"><h3>Imperfect information</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">An agent <mark class="kw">does not have all information</mark> needed for a rational decision, or information is <mark class="kw">distorted</mark>.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>missing or distorted</b><span>Either party may lack information about quality, risk or long-term cost.</span></div></div>
+          </article>
+          <article class="definition red">
+            <div class="definition-main">
+              <div class="term-line"><h3>Asymmetric information</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">A type of imperfect information where <mark class="kw">one party has more information</mark> than the other.</p>
+            </div>
+            <div class="keyword-grid"><div class="keyword"><b>one party knows more</b><span>A used-car seller normally knows more about the vehicle’s faults than the buyer.</span></div></div>
+          </article>
+          <article class="definition green">
+            <div class="definition-main">
+              <div class="term-line"><h3>Nudge</h3><span class="tag">AQA definition</span></div>
+              <p class="definition-text">Something that <mark class="kw">encourages a decision or behaviour</mark> without <mark class="kw">removing freedom of choice</mark>.</p>
+            </div>
+            <div class="keyword-grid">
+              <div class="keyword"><b>encourages</b><span>Defaults, order or salience are changed to make one choice easier.</span></div>
+              <div class="keyword"><b>freedom remains</b><span>Other options remain available; a ban is not a nudge.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note" style="margin-top:22px; color:var(--ink);">
+          <h3>Preview check: you should be able to answer these questions</h3>
+          <p>1. Why can TU continue to rise while MU falls? 2. How are imperfect information and asymmetric information related? 3. Why is placing healthy food beside a checkout a nudge, while banning a product is not?</p>
+        </div>
+
+        <div class="source-line preview-source">The next-lesson sequence follows AQA 7136 specification, 4.1.1 Individual economic decision making. Definitions are from AQA Subject Specific Vocabulary (2024).</div>
+      </div>
+    </section>
+
+    <section class="section practice-section" id="practice" data-nav>
+      <div class="section-inner">
+        <header class="section-head">
+          <div class="section-no">Q</div>
+          <div>
+            <p class="eyebrow">Official AQA past-paper practice</p>
+            <h2>Answer each question before checking the mark scheme</h2>
+            <p class="section-summary">Complete the 42 official multiple-choice questions and two 15-mark questions below. Select an option before checking an MCQ; write at least 80 characters and confirm completion before opening essay guidance. Your work is saved in this browser.</p>
+          </div>
+        </header>
+
+        <div class="practice-coverage">
+          <strong>Coverage: AQA specimen paper and every available exam series from 2017 to 2025</strong>
+          <span>The bank includes every Paper 3 MCQ found within the topics already studied in this course, plus both relevant 2020 Paper 1 “Explain” questions. Behavioural economics appears only in the preview above, so behavioural questions are deliberately excluded until that topic has been taught.</span>
+        </div>
+
+        <nav class="practice-index" aria-label="Past-paper question groups">
+          <a href="#bankA">A · Economic problem &amp; PPF</a>
+          <a href="#bankB">B · Markets &amp; exchange</a>
+          <a href="#bankC">C · Elasticity</a>
+          <a href="#bankD">D · Market failure</a>
+        </nav>
+
+        <div id="questionBank">
+          <section class="practice-group" id="bankA" aria-labelledby="bankATitle">
+            <h3 class="practice-group-title" id="bankATitle">A. The economic problem, methodology and PPF · 13 MCQs + 1 essay</h3>
+            <div data-bank-group="A"></div>
+
+            <article class="practice essay essay-current" id="essay-ppf" data-question="essay-ppf">
+              <div class="question-meta"><span class="question-id">AQA 2020 Paper 1 · Q11 <span class="question-sequence">15 marks</span></span><span>Explain · PPF and the fundamental economic problem</span></div>
+              <p class="question-text">Explain how a production possibility diagram can be used to illustrate some features of the fundamental economic problem. [15 marks]</p>
+              <div class="note" style="margin-bottom:14px;">
+                <strong>Complete this independently first:</strong> Draw and label a PPF. Use it to explain scarcity, choice, opportunity cost, unemployment or inefficient resource use, and economic growth.
+              </div>
+              <textarea class="essay-text" data-essay-text aria-label="Answer box for the PPF 15-mark question" placeholder="Suggested order: fundamental problem → PPF assumptions → points on/inside/outside → movement and opportunity cost → outward shift and growth."></textarea>
+              <div class="essay-tools"><span data-essay-count>0 characters; write at least 80 to continue</span><span>Saved automatically in this browser</span></div>
+              <label class="honesty-check"><input type="checkbox" data-essay-done><span>I have drawn the diagram and completed my answer independently. I am ready to check the mark-scheme guidance.</span></label>
+              <div class="answer-actions"><button class="reveal-button" type="button" disabled>Open mark-scheme guidance</button><span class="lock-note">Write 80 characters and tick the box</span></div>
+              <div class="answer-panel" hidden>
+                <p class="answer-key">Key points from the official mark scheme</p>
+                <div class="answer-outline">
+                  <div><b>1. Scarcity and maximum output</b><span>The boundary shows maximum combinations attainable with current resources and technology. A point outside is currently unattainable.</span></div>
+                  <div><b>2. Choice and opportunity cost</b><span>Moving along the boundary reallocates resources. More of one output requires less of the other; the foregone output is the opportunity cost.</span></div>
+                  <div><b>3. Efficiency and growth</b><span>A point inside shows unemployment or inefficient use. Moving to the boundary uses existing capacity; an outward shift shows increased productive capacity.</span></div>
+                </div>
+                <p style="margin-top:14px;"><strong>Strong analytical chain:</strong> finite resources prevent every want from being met → the economy must choose a point on or within the boundary → moving towards one output sacrifices some of the other → the slope or labelled change measures opportunity cost. Specialised resources can make this cost increase.</p>
+                <p class="micro"><strong>Note:</strong> This is teaching guidance based on the official indicative content, not an AQA-published candidate response. The official question is level marked, so accurate diagrams and connected explanation matter.</p>
+                <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-QP-NOV20.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-W-MS-NOV20.PDF" target="_blank" rel="noreferrer">Official mark scheme (Q11)</a></p>
+              </div>
+            </article>
+          </section>
+
+          <section class="practice-group" id="bankB" aria-labelledby="bankBTitle">
+            <h3 class="practice-group-title" id="bankBTitle">B. Specialisation, money, demand, supply and equilibrium · 10 MCQs</h3>
+            <div data-bank-group="B"></div>
+          </section>
+
+          <section class="practice-group" id="bankC" aria-labelledby="bankCTitle">
+            <h3 class="practice-group-title" id="bankCTitle">C. PED, YED and XED · 7 MCQs</h3>
+            <div data-bank-group="C"></div>
+          </section>
+
+          <section class="practice-group" id="bankD" aria-labelledby="bankDTitle">
+            <h3 class="practice-group-title" id="bankDTitle">D. Market failure, public goods, externalities and taxation · 12 MCQs + 1 essay</h3>
+            <div data-bank-group="D"></div>
+
+            <article class="practice essay essay-current" id="essay-tax" data-question="essay-tax">
+              <div class="question-meta"><span class="question-id">AQA 2020 Paper 1 · Q09 <span class="question-sequence">15 marks</span></span><span>Explain · Indirect tax and economic surplus</span></div>
+              <p class="question-text">Explain how the imposition of a tax on a good or service affects both consumer surplus and producer surplus. [15 marks]</p>
+              <div class="note" style="margin-bottom:14px;">
+                <strong>Complete this independently first:</strong> Draw a demand-and-supply diagram showing the price and quantity before and after tax, consumer surplus, producer surplus, government revenue and deadweight loss. Write at least two complete chains of analysis.
+              </div>
+              <textarea class="essay-text" data-essay-text aria-label="Answer box for the tax 15-mark question" placeholder="Suggested order: definitions → diagram changes → consumer surplus → producer surplus → tax incidence and elasticity → government revenue and deadweight loss."></textarea>
+              <div class="essay-tools"><span data-essay-count>0 characters; write at least 80 to continue</span><span>Saved automatically in this browser</span></div>
+              <label class="honesty-check"><input type="checkbox" data-essay-done><span>I have drawn the diagram and completed my answer independently. I am ready to check the mark-scheme guidance.</span></label>
+              <div class="answer-actions"><button class="reveal-button" type="button" disabled>Open mark-scheme guidance</button><span class="lock-note">Write 80 characters and tick the box</span></div>
+              <div class="answer-panel" hidden>
+                <p class="answer-key">Key points from the official mark scheme</p>
+                <div class="answer-outline">
+                  <div><b>1. Accurate definitions</b><span>Define indirect tax, consumer surplus and producer surplus. Explain that the tax raises production costs and shifts supply left or upwards.</span></div>
+                  <div><b>2. Surplus on both sides</b><span>The consumer price normally rises and quantity falls, reducing CS. The net producer price and quantity fall, reducing PS.</span></div>
+                  <div><b>3. Transfer and loss</b><span>Some former CS and PS becomes government tax revenue. The fall in transactions creates deadweight loss.</span></div>
+                </div>
+                <p style="margin-top:14px;"><strong>Elasticity analysis:</strong> Consumer surplus is affected more when PED is lower, while producer surplus is affected relatively more when PED is higher. A fuller answer compares PED with PES because tax incidence depends on which side finds it harder to change quantity.</p>
+                <p><strong>Suggested chain:</strong> tax raises firms’ unit costs → supply shifts upwards → the consumer price rises, the net producer price falls and equilibrium quantity falls → CS and PS contract → some former surplus becomes tax revenue and trades between the old and new quantities disappear as deadweight loss.</p>
+                <p class="micro"><strong>Note:</strong> This suggested chain is based on official indicative content; it is not an AQA-published candidate response.</p>
+                <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-QP-NOV20.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-W-MS-NOV20.PDF" target="_blank" rel="noreferrer">Official mark scheme (Q09)</a></p>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <section class="practice-group legacy-practice" hidden aria-labelledby="groupA">
+          <h3 class="practice-group-title" id="groupA">A. The economic problem, methodology and PPF</h3>
+
+          <article class="practice mcq" id="q1" data-question="q1" data-answer="D">
+            <div class="question-meta"><span class="question-id">AQA 2022 Paper 3 · Q01</span><span>1 mark · Positive statement</span></div>
+            <p class="question-text">A positive statement</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="A"><span><strong>A</strong> does not take into account irrational behaviour.</span></label>
+              <label class="option"><input type="radio" name="q1" value="B"><span><strong>B</strong> enables accurate forecasts to be made.</span></label>
+              <label class="option"><input type="radio" name="q1" value="C"><span><strong>C</strong> includes a value judgement.</span></label>
+              <label class="option"><input type="radio" name="q1" value="D"><span><strong>D</strong> may be true or false.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: D</p>
+              <p>A positive statement must be <strong>testable against evidence</strong>; it does not have to be correct. It may therefore be true or false. Option C describes a normative statement.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-QP-JUN22.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-MS-JUN22.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+
+          <article class="practice mcq" id="q2" data-question="q2" data-answer="C">
+            <div class="question-meta"><span class="question-id">AQA 2023 Paper 3 · Q02</span><span>1 mark · Scarcity</span></div>
+            <p class="question-text">The environment is a scarce resource. A consequence of this is that</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="A"><span><strong>A</strong> all natural resources have a market price.</span></label>
+              <label class="option"><input type="radio" name="q2" value="B"><span><strong>B</strong> all natural resources will eventually be used up.</span></label>
+              <label class="option"><input type="radio" name="q2" value="C"><span><strong>C</strong> the environment has an opportunity cost.</span></label>
+              <label class="option"><input type="radio" name="q2" value="D"><span><strong>D</strong> the environment is a pure public good.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: C</p>
+              <p>“Scarce” means the resource is limited and has competing uses. Using an environmental resource therefore gives up its next-best use and creates an opportunity cost. Scarcity does not mean the resource must be exhausted or must have a market price.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-QP-JUN23.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-MS-JUN23.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+
+          <article class="practice mcq" id="q3" data-question="q3" data-answer="A">
+            <div class="question-meta"><span class="question-id">AQA 2022 Paper 3 · Q03</span><span>1 mark · PPF</span></div>
+            <p class="question-text">Figure 1 shows a concave production possibility frontier for an economy producing capital goods and consumer goods. Moving along the frontier from X through Y to Z increases capital-goods output and reduces consumer-goods output. The opportunity cost of producing an additional unit of capital goods is</p>
+            <figure class="diagram" style="max-width:620px; margin:0 auto 14px;">
+              <svg viewBox="0 0 520 300" role="img" aria-label="Equivalent redraw of the AQA PPF, with X at the lower right, Y in the centre and Z at the upper left">
+                <line class="chart-axis" x1="60" y1="250" x2="485" y2="250"/>
+                <line class="chart-axis" x1="60" y1="250" x2="60" y2="24"/>
+                <path class="chart-accent" d="M85 50 C200 63, 356 112, 454 230"/>
+                <circle class="chart-point" cx="380" cy="150" r="7"/>
+                <circle class="chart-point" cx="270" cy="94" r="7"/>
+                <circle class="chart-point" cx="150" cy="60" r="7"/>
+                <text class="chart-label" x="389" y="145">X</text>
+                <text class="chart-label" x="279" y="88">Y</text>
+                <text class="chart-label" x="158" y="55">Z</text>
+                <text class="chart-small" x="214" y="282">Consumer goods</text>
+                <text class="chart-small" transform="translate(20 195) rotate(-90)">Capital goods</text>
+              </svg>
+              <figcaption>This equivalent redraw supports offline practice; the relationship between the points matches the original question.</figcaption>
+            </figure>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="A"><span><strong>A</strong> greater at X than Y.</span></label>
+              <label class="option"><input type="radio" name="q3" value="B"><span><strong>B</strong> greater at Z than Y.</span></label>
+              <label class="option"><input type="radio" name="q3" value="C"><span><strong>C</strong> the same at X, Y and Z.</span></label>
+              <label class="option"><input type="radio" name="q3" value="D"><span><strong>D</strong> zero when 300 units of consumer goods are produced.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: A</p>
+              <p>The question asks about one additional unit of capital goods. Near X, the PPF is flatter, so the same vertical increase requires a larger sacrifice of consumer goods on the horizontal axis. Opportunity cost is therefore greater at X than at Y. Compare the slope of the frontier rather than judging which point is higher.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-QP-JUN22.PDF" target="_blank" rel="noreferrer">Original diagram and question</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-MS-JUN22.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+        </section>
+
+        <section class="practice-group legacy-practice" hidden aria-labelledby="groupB">
+          <h3 class="practice-group-title" id="groupB">B. Specialisation, demand, supply and equilibrium</h3>
+
+          <article class="practice mcq" id="q4" data-question="q4" data-answer="B">
+            <div class="question-meta"><span class="question-id">AQA 2020 Paper 3 · Q14</span><span>1 mark · Specialisation</span></div>
+            <p class="question-text">Increased output results from specialisation and the division of labour because they enable</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="A"><span><strong>A</strong> countries to produce outside their production possibility boundary.</span></label>
+              <label class="option"><input type="radio" name="q4" value="B"><span><strong>B</strong> more efficient use of the available resources.</span></label>
+              <label class="option"><input type="radio" name="q4" value="C"><span><strong>C</strong> people to exchange goods and services with each other.</span></label>
+              <label class="option"><input type="radio" name="q4" value="D"><span><strong>D</strong> the use of money as a medium of exchange and store of value.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: B</p>
+              <p>Specialisation improves the efficiency of resource use through greater skill, less switching time and specialised capital. Output therefore rises with the same resources. Exchange and money help share the gains from specialisation, but they are not the direct mechanism that raises output.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-QP-NOV20.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-W-MS-NOV20.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+
+          <article class="practice mcq" id="q5" data-question="q5" data-answer="C">
+            <div class="question-meta"><span class="question-id">AQA 2020 Paper 3 · Q17</span><span>1 mark · Market equilibrium</span></div>
+            <p class="question-text">Table 3 shows the demand for and supply of oranges. As a result of an increase in consumers’ incomes, demand increases by 25% at each price.</p>
+            <table class="compact-table" style="margin-bottom:14px;">
+              <thead><tr><th>Price (pence)</th><th>Quantity supplied (000s)</th><th>Initial quantity demanded (000s)</th></tr></thead>
+              <tbody>
+                <tr><td>10</td><td>100</td><td>125</td></tr>
+                <tr><td>15</td><td>120</td><td>120</td></tr>
+                <tr><td>20</td><td>122</td><td>108</td></tr>
+                <tr><td>25</td><td>125</td><td>100</td></tr>
+                <tr><td>30</td><td>128</td><td>88</td></tr>
+              </tbody>
+            </table>
+            <p class="question-text">After the rise in incomes:</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="A"><span><strong>A</strong> at a price of 10 pence, excess demand increases by 50%.</span></label>
+              <label class="option"><input type="radio" name="q5" value="B"><span><strong>B</strong> at a price of 30 pence, excess supply falls by 75%.</span></label>
+              <label class="option"><input type="radio" name="q5" value="C"><span><strong>C</strong> the equilibrium market price increases by two-thirds.</span></label>
+              <label class="option"><input type="radio" name="q5" value="D"><span><strong>D</strong> the price elasticity of demand increases by 25% at each price.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: C</p>
+              <p>The initial equilibrium is at 15p, where Qd = Qs = 120. New quantity demanded equals original Qd × 1.25. At 25p, new Qd = 100 × 1.25 = 125, which equals Qs. Equilibrium price rises from 15p to 25p, an increase of 10/15 = 2/3.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-QP-NOV20.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-W-MS-NOV20.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+        </section>
+
+        <section class="practice-group legacy-practice" hidden aria-labelledby="groupC">
+          <h3 class="practice-group-title" id="groupC">C. Elasticity</h3>
+
+          <article class="practice mcq" id="q6" data-question="q6" data-answer="D">
+            <div class="question-meta"><span class="question-id">AQA 2023 Paper 3 · Q03</span><span>1 mark · XED</span></div>
+            <p class="question-text">The price of a packet of peanuts rises from £0.80 to £0.84. The number of packets of cashew nuts purchased per month rises from 20,000 to 32,500, while the price of cashew nuts is unchanged. The cross elasticity of demand for cashew nuts with respect to the price of peanuts is</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q6" value="A"><span><strong>A</strong> −12.5</span></label>
+              <label class="option"><input type="radio" name="q6" value="B"><span><strong>B</strong> −0.08</span></label>
+              <label class="option"><input type="radio" name="q6" value="C"><span><strong>C</strong> +0.08</span></label>
+              <label class="option"><input type="radio" name="q6" value="D"><span><strong>D</strong> +12.5</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: D</p>
+              <p>%ΔQd cashews = 12,500/20,000 × 100 = 62.5%; %ΔP peanuts = 0.04/0.80 × 100 = 5%. XED = 62.5/5 = <strong>+12.5</strong>. The positive sign shows that the two goods are substitutes.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-QP-JUN23.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-MS-JUN23.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+        </section>
+
+        <section class="practice-group legacy-practice" hidden aria-labelledby="groupD">
+          <h3 class="practice-group-title" id="groupD">D. Market failure, public goods and taxation</h3>
+
+          <article class="practice mcq" id="q7" data-question="q7" data-answer="B">
+            <div class="question-meta"><span class="question-id">AQA 2022 Paper 3 · Q07</span><span>1 mark · Market failure</span></div>
+            <p class="question-text">Which one of the following is a reason why the extension of property rights is likely to reduce market failure?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q7" value="A"><span><strong>A</strong> Merit goods will no longer be underconsumed in a free market.</span></label>
+              <label class="option"><input type="radio" name="q7" value="B"><span><strong>B</strong> Producers will be more likely to have to pay compensation for pollution.</span></label>
+              <label class="option"><input type="radio" name="q7" value="C"><span><strong>C</strong> Public goods will no longer be subject to the free-rider problem.</span></label>
+              <label class="option"><input type="radio" name="q7" value="D"><span><strong>D</strong> The inequality in the distribution of income and wealth will be reduced.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: B</p>
+              <p>Clear property rights make it easier for people affected by pollution to claim compensation, bringing the external cost of pollution into producers’ decisions. Options A, C and D concern information and merit goods, non-excludability of public goods, and income distribution respectively. Extending property rights does not automatically solve these problems.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-QP-JUN22.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-MS-JUN22.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+
+          <article class="practice mcq" id="q8" data-question="q8" data-answer="D">
+            <div class="question-meta"><span class="question-id">AQA 2021 Paper 3 · Q08</span><span>1 mark · Public goods</span></div>
+            <p class="question-text">The free-rider problem in economics means that government intervention is necessary to prevent market failure in the supply of</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q8" value="A"><span><strong>A</strong> inferior goods.</span></label>
+              <label class="option"><input type="radio" name="q8" value="B"><span><strong>B</strong> merit goods.</span></label>
+              <label class="option"><input type="radio" name="q8" value="C"><span><strong>C</strong> private goods.</span></label>
+              <label class="option"><input type="radio" name="q8" value="D"><span><strong>D</strong> public goods.</span></label>
+            </div>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Official answer: D</p>
+              <p>Pure public goods are non-excludable, so people who do not pay are difficult to exclude. This creates an incentive to free ride, making it difficult for private firms to charge and potentially causing non-provision. Merit goods are different: their benefits are not fully appreciated, leading to underconsumption rather than a free-rider problem.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71363-QP-NOV21.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71363-MS-NOV21.PDF" target="_blank" rel="noreferrer">Official mark scheme</a></p>
+            </div>
+          </article>
+
+          <article class="practice essay" id="q9" data-question="q9">
+            <div class="question-meta"><span class="question-id">AQA 2020 Paper 1 · Q09</span><span>15 marks · Explain</span></div>
+            <p class="question-text">Explain how the imposition of a tax on a good or service affects both consumer surplus and producer surplus. [15 marks]</p>
+            <div class="note" style="margin-bottom:14px;">
+              <strong>Complete this independently first:</strong> Draw a demand-and-supply diagram showing the price and quantity before and after tax, consumer surplus, producer surplus, government revenue and deadweight loss. Write at least two complete chains of analysis.
+            </div>
+            <textarea class="essay-text" id="essayAnswer" aria-label="Answer box for the 15-mark question" placeholder="Write your answer here. Suggested order: definitions → diagram changes → consumer surplus → producer surplus → tax incidence and elasticity → government revenue and deadweight loss."></textarea>
+            <div class="essay-tools"><span id="essayCount">0 characters; write at least 80 to continue</span><span>Saved automatically in this browser</span></div>
+            <label class="honesty-check"><input type="checkbox" id="essayDone"><span>I have drawn the diagram and completed my answer independently. I am ready to check the mark-scheme guidance.</span></label>
+            <div class="answer-actions"><button class="reveal-button" type="button" disabled>Open mark-scheme guidance</button><span class="lock-note">Write 80 characters and tick the box</span></div>
+            <div class="answer-panel" hidden>
+              <p class="answer-key">Key points from the official mark scheme</p>
+              <div class="answer-outline">
+                <div><b>1. Accurate definitions</b><span>Define indirect tax, consumer surplus and producer surplus. Explain that the tax raises production costs and shifts supply left or upwards.</span></div>
+                <div><b>2. Surplus on both sides</b><span>The consumer price normally rises and quantity falls, reducing CS. The net producer price and quantity fall, reducing PS.</span></div>
+                <div><b>3. Transfer and loss</b><span>Some former CS and PS becomes government tax revenue. The fall in transactions creates deadweight loss.</span></div>
+              </div>
+              <p style="margin-top:14px;"><strong>Elasticity analysis:</strong> The official guidance states that consumer surplus is affected more when PED is lower, while producer surplus is affected relatively more when PED is higher. A fuller answer should compare PED with PES because tax incidence depends on which side finds it harder to change quantity.</p>
+              <p><strong>Suggested chain of analysis:</strong> The tax raises firms’ cost per unit → S shifts upwards → excess demand appears at the original price → the consumer price rises, the net producer price falls and equilibrium quantity falls. The higher consumer price and lower quantity reduce CS; the lower net producer price and lower quantity reduce PS. Some surplus on transactions that still occur becomes government revenue, while the mutually beneficial trades between Q₀ and Q₁ disappear, creating deadweight loss.</p>
+              <p class="micro"><strong>Note:</strong> This suggested chain is based on the official indicative content; it is not an AQA-published candidate response. The question uses levels of response, so diagram accuracy, analytical chains and overall coherence all affect the level awarded.</p>
+              <p class="official-link"><a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-QP-NOV20.PDF" target="_blank" rel="noreferrer">Original paper</a> · <a href="https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71361-W-MS-NOV20.PDF" target="_blank" rel="noreferrer">Official mark scheme (Q09)</a></p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="closing">
+    <div class="closing-inner">
+      <div>
+        <h2>Ready to move on?</h2>
+        <p>You should be able to rebuild each definition from its keywords, draw the correct curve from the cause of a change, interpret a value using the formula, and write an answer as “cause → mechanism → result”.</p>
+      </div>
+      <a class="top-link" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    if (false) (() => {
+      const STORAGE_KEY = "aqa-afterclass-review-v1";
+      const practices = [...document.querySelectorAll(".practice")];
+      const navLinks = [...document.querySelectorAll(".chapter-nav a")];
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+      const essayText = document.getElementById("essayAnswer");
+      const essayDone = document.getElementById("essayDone");
+      const essayCount = document.getElementById("essayCount");
+
+      const defaultState = { answers: {}, revealed: {}, essay: "", essayDone: false };
+      let state = loadState();
+
+      function loadState() {
+        try {
+          return { ...defaultState, ...JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") };
+        } catch {
+          return { ...defaultState };
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const completed = practices.filter((item) => state.revealed[item.dataset.question]).length;
+        const total = practices.length;
+        progressBar.style.width = `${(completed / total) * 100}%`;
+        progressText.textContent = `${completed} / ${total} checked`;
+      }
+
+      function markMcq(practice) {
+        const question = practice.dataset.question;
+        const correct = practice.dataset.answer;
+        practice.querySelectorAll(".option").forEach((label) => {
+          label.classList.remove("correct", "incorrect");
+          const input = label.querySelector("input");
+          if (input.value === correct) label.classList.add("correct");
+          if (input.checked && input.value !== correct) label.classList.add("incorrect");
+        });
+      }
+
+      function restorePractice(practice) {
+        const question = practice.dataset.question;
+        const button = practice.querySelector(".reveal-button");
+        const panel = practice.querySelector(".answer-panel");
+        const note = practice.querySelector(".lock-note");
+
+        if (practice.classList.contains("mcq")) {
+          const answer = state.answers[question];
+          if (answer) {
+            const input = practice.querySelector(`input[value="${answer}"]`);
+            if (input) input.checked = true;
+            button.disabled = false;
+            note.textContent = "Selected; ready to check";
+          }
+        }
+
+        if (state.revealed[question]) {
+          panel.hidden = false;
+          button.textContent = "Answer opened";
+          button.disabled = true;
+          note.textContent = "";
+          if (practice.classList.contains("mcq")) markMcq(practice);
+        }
+      }
+
+      practices.forEach((practice) => {
+        const question = practice.dataset.question;
+        const button = practice.querySelector(".reveal-button");
+        const panel = practice.querySelector(".answer-panel");
+        const note = practice.querySelector(".lock-note");
+
+        if (practice.classList.contains("mcq")) {
+          practice.querySelectorAll('input[type="radio"]').forEach((input) => {
+            input.addEventListener("change", () => {
+              state.answers[question] = input.value;
+              button.disabled = false;
+              note.textContent = "Selected; ready to check";
+              saveState();
+            });
+          });
+        }
+
+        button.addEventListener("click", () => {
+          if (practice.classList.contains("essay") && !essayCanReveal()) return;
+          state.revealed[question] = true;
+          panel.hidden = false;
+          button.textContent = "Answer opened";
+          button.disabled = true;
+          note.textContent = "";
+          if (practice.classList.contains("mcq")) markMcq(practice);
+          saveState();
+        });
+
+        restorePractice(practice);
+      });
+
+      function essayCanReveal() {
+        return essayText.value.trim().length >= 80 && essayDone.checked;
+      }
+
+      function updateEssayGate() {
+        const essayPractice = document.getElementById("q9");
+        const button = essayPractice.querySelector(".reveal-button");
+        const note = essayPractice.querySelector(".lock-note");
+        const count = essayText.value.trim().length;
+        essayCount.textContent = `${count} characters${count < 80 ? "; write at least 80 to continue" : "; minimum length reached"}`;
+        if (!state.revealed.q9) {
+          button.disabled = !essayCanReveal();
+          note.textContent = essayCanReveal() ? "Complete; ready to open" : "Write 80 characters and tick the box";
+        }
+      }
+
+      essayText.value = state.essay || "";
+      essayDone.checked = Boolean(state.essayDone);
+      essayText.addEventListener("input", () => {
+        state.essay = essayText.value;
+        saveState();
+        updateEssayGate();
+      });
+      essayDone.addEventListener("change", () => {
+        state.essayDone = essayDone.checked;
+        saveState();
+        updateEssayGate();
+      });
+      updateEssayGate();
+      updateProgress();
+
+      document.getElementById("resetProgress").addEventListener("click", () => {
+        const confirmed = window.confirm("Clear all saved choices, the essay response and opened answers?");
+        if (!confirmed) return;
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.reload();
+      });
+
+      const observedSections = [...document.querySelectorAll("[data-nav]")];
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`);
+        });
+      }, { rootMargin: "-115px 0px -65% 0px", threshold: [0.05, 0.2, 0.5] });
+      observedSections.forEach((section) => observer.observe(section));
+    })();
+  </script>
+  <script>
+    (() => {
+      const STORAGE_KEY = "aqa-afterclass-review-v2";
+      const papers = {
+        spec: {
+          label: "AQA Specimen Paper 3",
+          qp: "https://filestore.aqa.org.uk/resources/economics/AQA-71363-SQP.PDF",
+          ms: "https://filestore.aqa.org.uk/resources/economics/AQA-71363-SMS.PDF"
+        },
+        "2017": {
+          label: "AQA 2017 Paper 3",
+          qp: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-QP-JUN17.pdf",
+          ms: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-W-MS-JUN17.pdf",
+          note: "Archived copy of the original AQA paper and mark scheme."
+        },
+        "2018": {
+          label: "AQA 2018 Paper 3",
+          qp: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-QP-JUN18.pdf",
+          ms: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-W-MS-JUN18.pdf",
+          note: "Archived copy of the original AQA paper and mark scheme."
+        },
+        "2019": {
+          label: "AQA 2019 Paper 3",
+          qp: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-QP-JUN19.pdf",
+          ms: "https://pastpapers.co/aqa/A-Level/Economics-%207135-7136/AQA-71363-W-MS-JUN19.pdf",
+          note: "Archived copy of the original AQA paper and mark scheme."
+        },
+        "2020": {
+          label: "AQA 2020 Paper 3",
+          qp: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-QP-NOV20.PDF",
+          ms: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71363-W-MS-NOV20.PDF"
+        },
+        "2021": {
+          label: "AQA 2021 Paper 3",
+          qp: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71363-QP-NOV21.PDF",
+          ms: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71363-MS-NOV21.PDF"
+        },
+        "2022": {
+          label: "AQA 2022 Paper 3",
+          qp: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-QP-JUN22.PDF",
+          ms: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71363-MS-JUN22.PDF"
+        },
+        "2023": {
+          label: "AQA 2023 Paper 3",
+          qp: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-QP-JUN23.PDF",
+          ms: "https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71363-MS-JUN23.PDF"
+        },
+        "2024": {
+          label: "AQA 2024 Paper 3",
+          qp: "https://cdn.sanity.io/files/p28bar15/green/a26007db4dba06ad9f8761c430119ba9446ba739.pdf",
+          ms: "https://cdn.sanity.io/files/p28bar15/green/e2e0e647cf65e71d6b8ab2a9a6e8df3f0a41d31a.pdf"
+        },
+        "2025": {
+          label: "AQA 2025 Paper 3",
+          qp: "https://www.aqa.org.uk/files/fHDU1dLPgDwvQhfFoKeqIA/17a274f98ef6fb52422b9908297d7f637b83a7a6.pdf",
+          ms: "https://www.aqa.org.uk/files/cRIpdimsSKiybuSFvOtY2W/d7f44506e5ab418d282af0fd12e26899061e976e.pdf"
+        }
+      };
+
+      const questions = [];
+      const add = (group, series, number, topic, stem, options, answer, explanation, visual = "") => {
+        questions.push({
+          id: `mcq-${series}-${number.padStart(2, "0")}`,
+          group, series, number, topic, stem, options, answer, explanation, visual
+        });
+      };
+
+      add("A", "spec", "29", "PPF and opportunity cost",
+        "A farmer can produce wheat and barley. The production possibility boundary shows X at 40 tonnes of barley and 60 tonnes of wheat, Y at 75 and 40, and Z at 90 and 20. It can be deduced from the diagram that",
+        [
+          "a movement from X to Y results in an improvement in productive efficiency because total grain output increases from 100 to 115 tonnes.",
+          "at point X, the opportunity cost of producing 20 more tonnes of wheat is 40 tonnes of barley.",
+          "a movement from Y to Z does not involve an opportunity cost because all resources are fully employed.",
+          "the maximum amount of grain the farm can produce in one year is 80 tonnes of wheat and 100 tonnes of barley."
+        ], "B",
+        "From X, increasing wheat from 60 to 80 tonnes requires barley output to fall from 40 to 0 tonnes. The opportunity cost is therefore 40 tonnes of barley. Every point on the boundary is productively efficient, and the two intercepts cannot be produced together.", "spec-ppf");
+
+      add("A", "2017", "1", "Value judgements",
+        "Economic decision making and policies are influenced by value judgements because",
+        [
+          "all people are motivated by the desire to maximise their incomes.",
+          "economic analysis and decision making is assumed to be based on complete information.",
+          "they are based on the same methodology as the natural sciences.",
+          "they involve moral and political considerations as well as positive analysis."
+        ], "D",
+        "Value judgements concern what ought to happen and depend on ethical, moral or political priorities. Positive evidence can inform a decision, but it cannot by itself decide which objective society should value most.");
+
+      add("A", "2018", "3", "PPF: inside to boundary",
+        "A production possibility frontier shows an economy producing consumer goods and capital goods. The economy is initially at X within the frontier. If it moves from X to Y on the frontier it will",
+        [
+          "achieve both productive and allocative efficiency.",
+          "benefit from improved economies of scale in the production of both goods.",
+          "increase its underlying trend rate of growth.",
+          "obtain more consumer goods and capital goods at zero opportunity cost."
+        ], "D",
+        "X is inside the frontier, so some resources are unemployed or inefficiently used. Moving to Y uses existing spare capacity and raises both outputs without sacrificing either. Y is productively efficient, but the diagram alone cannot prove allocative efficiency.", "inside-ppf");
+
+      add("A", "2019", "16", "Positive statement",
+        "A country’s Gini coefficient falls from 0.60 in 2012 to 0.40 in 2016 while the government uses progressive taxation. Which statement is positive?",
+        [
+          "A progressive tax system is the fairest way of correcting income inequality.",
+          "Between 2012 and 2016 the distribution of income in the country became more equal.",
+          "The Gini coefficient is the best way of measuring changes in the distribution of income.",
+          "The government should continue to tax the rich to improve the distribution of income."
+        ], "B",
+        "B is testable against the data: a lower Gini coefficient indicates a more equal distribution. “Fairest”, “best” and “should” express value judgements and are normative.", "gini-table");
+
+      add("A", "2020", "1", "Economics as a social science",
+        "Economics is a social science because",
+        [
+          "all economic hypotheses are based on value judgements.",
+          "economic policies can only be based on positive analysis.",
+          "it involves the study of human behaviour and economic decision making.",
+          "quantitative data cannot be used to test economic theories."
+        ], "C",
+        "Economics studies how people, firms and governments make decisions. It uses hypotheses, models and quantitative evidence, but human behaviour and changing institutions make it a social rather than natural science.");
+
+      add("A", "2021", "6", "PPF opportunity cost",
+        "A PPF shows capital goods on the vertical axis and consumer goods on the horizontal axis. The opportunity cost of increasing capital-goods output from G1 to G2 is shown by",
+        ["H − H2", "the area H2KLH1", "G2 − G1", "H1 − H2"], "D",
+        "The economy moves from L to K. Capital-goods output rises from G1 to G2 while consumer-goods output falls from H1 to H2, so the quantity foregone is H1 − H2.", "labelled-ppf");
+
+      add("A", "2022", "1", "Positive statement",
+        "A positive statement",
+        [
+          "does not take into account irrational behaviour.",
+          "enables accurate forecasts to be made.",
+          "includes a value judgement.",
+          "may be true or false."
+        ], "D",
+        "A positive statement is testable using evidence. Testable does not mean automatically correct, so the statement may be true or false. A statement containing a value judgement is normative.");
+
+      add("A", "2022", "3", "Increasing opportunity cost",
+        "A concave PPF shows capital goods on the vertical axis and consumer goods on the horizontal axis. X represents 150 consumer goods and 400 capital goods; Y represents 225 and 300; Z represents 265 and 200. The opportunity cost of producing an additional unit of capital goods is",
+        [
+          "greater at X than Y.",
+          "greater at Z than Y.",
+          "the same at X, Y and Z.",
+          "zero when 300 units of consumer goods are produced."
+        ], "A",
+        "Compare equal gains of 100 capital goods. Z to Y sacrifices 40 consumer goods (265 to 225); Y to X sacrifices 75 (225 to 150); X to the vertical intercept sacrifices 150 (150 to 0). The opportunity cost is therefore greater at X than at Y.", "slope-ppf");
+
+      add("A", "2023", "2", "Scarcity",
+        "The environment is a scarce resource. A consequence of this is that",
+        [
+          "all natural resources have a market price.",
+          "all natural resources will eventually be used up.",
+          "the environment has an opportunity cost.",
+          "the environment is a pure public good."
+        ], "C",
+        "A scarce resource is limited relative to competing wants. Using it in one way gives up its next-best use, creating opportunity cost. Scarcity does not require a market price or inevitable exhaustion.");
+
+      add("A", "2024", "1", "The basic economic problem",
+        "Which one of the following is a consequence of the basic economic problem of limited resources and unlimited wants?",
+        [
+          "All goods and services will have a market price.",
+          "Employment of factors of production has an opportunity cost.",
+          "Markets are unable to allocate resources efficiently.",
+          "There will not be an excess supply in markets."
+        ], "B",
+        "Because factors have alternative uses, employing them for one output sacrifices the next-best output they could have produced. That sacrifice is opportunity cost.");
+
+      add("A", "2024", "3", "PPF and productive efficiency",
+        "A car industry’s PPF shows petrol-powered cars on the vertical axis and electric-powered cars on the horizontal axis. Production moves from A to B, with both points on the boundary. Which statement must be true?",
+        [
+          "Allocative efficiency in the car industry is unchanged.",
+          "Demand for electric-powered vehicles has increased.",
+          "Productive efficiency in the car industry is unchanged.",
+          "Static efficiency in the car industry has improved."
+        ], "C",
+        "Both A and B lie on the production possibility boundary, so resources are fully and efficiently used at both points. The diagram does not reveal demand or whether the output mix is allocatively efficient.", "cars-ppf");
+
+      add("A", "2025", "2", "PPF reallocation",
+        "An economy is producing at Y on a PPF for private-sector and public-sector output. Public-sector output is increased by VW, moving production from Y to Z. What is the opportunity cost in terms of private-sector output?",
+        ["OS", "OT", "ST", "YZ"], "C",
+        "The move from Y to Z raises public-sector output from V to W and lowers private-sector output from S to T. The private-sector output foregone is therefore ST.", "public-private-ppf");
+
+      add("A", "2025", "3", "Developing an economic theory",
+        "Which one of the following best describes how a social scientist would develop an economic theory?",
+        [
+          "Apply logic to make connections between normative and positive economic concepts.",
+          "Create a hypothesis and test whether it can predict the behaviour of economic agents.",
+          "Develop a number of policies and test whether they are successful in the real world.",
+          "Form a set of value judgements and test whether they are supported by statistical data."
+        ], "B",
+        "A theory begins with a hypothesis and produces predictions that can be compared with observed behaviour. Normative judgements may guide policy goals, but they are not themselves testable theories.");
+
+      add("B", "spec", "6", "Normal goods and demand",
+        "Electric light bulbs are a normal good. A diagram shows demand shifting from D1 to D2 and equilibrium price rising from P1 to P2. This can be explained by",
+        [
+          "an increase in household incomes.",
+          "an increase in the price of electricity.",
+          "a decrease in the rate of VAT on light bulbs.",
+          "the introduction of a government subsidy to producers of light bulbs."
+        ], "A",
+        "For a normal good, higher income raises demand, shifting the demand curve right and increasing both equilibrium price and quantity. A VAT cut or producer subsidy changes supply instead.", "demand-right");
+
+      add("B", "2017", "10", "Market equilibrium",
+        "Demand for good X increases from D1 to D2. The initial equilibrium is E1 at P1 and the new equilibrium is E2 at P2. The market mechanism establishing E2 is based on",
+        [
+          "excess demand for good X at the initial price P1.",
+          "excess demand for good X at the new price P2.",
+          "excess supply of good X at the initial price P1.",
+          "excess supply of good X at the new price P2."
+        ], "A",
+        "At P1, the rightward demand shift makes quantity demanded exceed quantity supplied. This excess demand bids the price up, encouraging supply and reducing quantity demanded until the market reaches E2.", "demand-right");
+
+      add("B", "2020", "14", "Specialisation and division of labour",
+        "Increased output results from specialisation and the division of labour because they enable",
+        [
+          "countries to produce outside their production possibility boundary.",
+          "more efficient use of the available resources.",
+          "people to exchange goods and services with each other.",
+          "the use of money as a medium of exchange and store of value."
+        ], "B",
+        "Specialisation can increase skill, reduce switching time and support specialised capital, so the same resources produce more output. Exchange and money help distribute the output but are not the direct productivity mechanism.");
+
+      add("B", "2020", "17", "Market equilibrium",
+        "Demand for oranges rises by 25% at every price. Using the table, which conclusion is correct after the rise in income?",
+        [
+          "At 10p, excess demand increases by 50%.",
+          "At 30p, excess supply falls by 75%.",
+          "The equilibrium market price increases by two-thirds.",
+          "PED increases by 25% at each price."
+        ], "C",
+        "Initial equilibrium is 15p, where demand and supply are 120,000. New demand at 25p is 100,000 × 1.25 = 125,000, equal to supply. Price rises by 10p from 15p: 10 ÷ 15 = two-thirds.", "oranges-table");
+
+      add("B", "2023", "1", "Supply shift",
+        "A diagram shows the price of lemons falling while the equilibrium quantity rises. This could have been caused by",
+        [
+          "a fall in the price of a substitute for lemons, oranges.",
+          "a rise in the price of lemonade.",
+          "a reduction in the price of a complement for lemons, fish.",
+          "favourable weather leading to a record harvest."
+        ], "D",
+        "Favourable weather increases the supply of lemons, shifting supply right. With demand unchanged, equilibrium price falls and equilibrium quantity rises. Demand changes would move price and quantity in the same direction.", "supply-right");
+
+      add("B", "2023", "19", "Incentive function of prices",
+        "Carrots and potatoes use the same factors of production. Demand for carrots increases and, as a result, the supply of potatoes shifts left. Which statement correctly explains the changes?",
+        [
+          "The demand curve for carrots shifts due to the rationing function of prices.",
+          "The price of carrots increases because carrots and potatoes are in derived demand.",
+          "The price of potatoes increases because potatoes and carrots are in joint supply.",
+          "The supply curve for potatoes shifts due to the incentive function of prices."
+        ], "D",
+        "Higher demand raises the price and profitability of carrots. The incentive function of price encourages producers to reallocate shared factors towards carrots, reducing the supply of potatoes.", "resource-reallocation");
+
+      add("B", "2024", "10", "Joint supply",
+        "An increase in demand for Good X raises its equilibrium price and quantity. In the market for Good Y, supply increases, lowering price and raising quantity. It can be concluded that X and Y are in",
+        ["competitive demand.", "composite demand.", "derived demand.", "joint supply."], "D",
+        "Producing more X automatically creates more Y as a by-product, so the rise in X output shifts Y’s supply right. This is joint supply.", "joint-supply");
+
+      add("B", "2024", "15", "Functions of money",
+        "Which function of money is likely to be most effective during a period of deflation?",
+        ["Measure of value", "Standard of deferred payment", "Store of value", "Unit of account"], "C",
+        "During deflation, the price level falls and the purchasing power of money rises. Holding money therefore preserves and increases real purchasing power, making it an effective store of value.");
+
+      add("B", "2025", "14", "Market disequilibrium",
+        "A rental market diagram shows the current rent R1 below the equilibrium price. Why is the market in disequilibrium at R1?",
+        [
+          "Market forces are likely to encourage landlords to reduce the rent they charge.",
+          "Market forces are likely to increase average rent and reduce the number of houses available.",
+          "Some landlords who want to rent houses out at R1 cannot find tenants.",
+          "Some potential tenants who want to rent a house at R1 cannot find one."
+        ], "D",
+        "At R1, quantity demanded exceeds quantity supplied, so there is a shortage. Some potential tenants cannot find a property, and competition between tenants creates upward pressure on rent.", "rent-shortage");
+
+      add("B", "2025", "24", "Comparative advantage",
+        "Country X can produce at most 80 canoes or 110 rowing boats. Country Y can produce at most 60 canoes or 150 rowing boats. Which statement is supported by the data?",
+        [
+          "Country X has both an absolute and a comparative advantage in producing canoes.",
+          "In Country Y, producing rowing boats requires two and a half times as many resources as producing canoes.",
+          "The maximum number of canoes and rowing boats the two countries can produce between them is 400.",
+          "The opportunity cost of a canoe in Country Y is 25% lower than in Country X."
+        ], "A",
+        "X has the higher canoe maximum, so it has absolute advantage. One canoe costs 110/80 = 1.375 boats in X but 150/60 = 2.5 boats in Y, so X also has the lower opportunity cost and comparative advantage in canoes.", "trade-ppfs");
+
+      add("C", "2017", "30", "PED calculation",
+        "The price elasticity of demand for games consoles is −1.2. A 10% reduction in price would lead to a percentage change in demand of",
+        ["−8.3%", "−12.0%", "+8.3%", "+12.0%"], "D",
+        "PED = % change in quantity demanded ÷ % change in price. Therefore %ΔQd = −1.2 × −10% = +12%. Price and quantity demanded move in opposite directions.");
+
+      add("C", "2018", "8", "XED calculation",
+        "The price of good Y, a substitute for good X, rises from 75p to £1. Quantity demanded for X rises from 3 million to 5 million units per month. The XED of X with respect to Y is",
+        ["+0.5", "−0.5", "+2.0", "−2.0"], "C",
+        "%ΔQd of X = 2/3 × 100 = 66.7%; %ΔP of Y = 25/75 × 100 = 33.3%. XED = 66.7 ÷ 33.3 = +2. The positive sign confirms substitutes.");
+
+      add("C", "2018", "11", "YED and equilibrium",
+        "At the initial equilibrium, YED for fresh chickens is +1.5 and PES is +1.0. Consumers’ income then rises by 5%. Which combination is most likely?",
+        ["Price higher; quantity unchanged", "Price higher; quantity higher", "Price unchanged; quantity unchanged", "Price lower; quantity higher"], "B",
+        "Positive YED means chicken is a normal good, so higher income shifts demand right. With an upward-sloping supply curve, both equilibrium price and quantity rise.");
+
+      add("C", "2020", "15", "PED and total revenue",
+        "A firm faces a straight downward-sloping demand curve and a marginal revenue curve. It currently sells Q1 where marginal revenue is positive. If it increases price by 10%",
+        [
+          "price elasticity of demand will decrease.",
+          "price elasticity of demand will not change.",
+          "total revenue will decrease.",
+          "total revenue will increase."
+        ], "C",
+        "Positive marginal revenue means demand is price elastic at Q1. Raising price causes a more than proportionate fall in quantity demanded, so total revenue decreases.", "revenue-curves");
+
+      add("C", "2022", "8", "PED and total revenue",
+        "A firm’s demand curve shows 100 scarves demanded at £30 and 110 at £25. When price falls from £30 to £25, which statement is true?",
+        [
+          "Demand is price elastic.",
+          "PED is −0.5.",
+          "The firm’s total revenue falls.",
+          "The firm’s total revenue increases."
+        ], "C",
+        "Total revenue falls from £30 × 100 = £3,000 to £25 × 110 = £2,750. Quantity responds proportionately less than price, so demand is price inelastic over this change.", "scarves-demand");
+
+      add("C", "2023", "3", "XED calculation",
+        "The price of peanuts rises from £0.80 to £0.84. Monthly purchases of cashew nuts rise from 20,000 to 32,500 while the cashew price is unchanged. XED is",
+        ["−12.5", "−0.08", "+0.08", "+12.5"], "D",
+        "%ΔQd cashews = 12,500/20,000 × 100 = 62.5%; %ΔP peanuts = 0.04/0.80 × 100 = 5%. XED = 62.5/5 = +12.5. The positive sign shows substitutes.");
+
+      add("C", "2024", "4", "YED calculation",
+        "A household’s income rises from £35,000 to £38,500. YED for Good X is −0.2 and YED for Good Y is +0.4. Which statement is correct?",
+        [
+          "Spending on X falls by £70 and spending on Y rises by £140.",
+          "Spending on X falls by £700 and spending on Y rises by £1,400.",
+          "Spending on X falls by 2% and spending on Y rises by 4%.",
+          "Spending on X falls by 20% and spending on Y rises by 40%."
+        ], "C",
+        "Income rises by 10%. Applying YED gives a 2% fall for X (−0.2 × 10%) and a 4% rise for Y (+0.4 × 10%). X is inferior and Y is normal.");
+
+      add("D", "spec", "10", "External benefits and costs",
+        "At the free-market equilibrium, Product X has MPB £200, MEB £50, MPC £200 and MEC £90. Product Y has MPB £70, MEB £40, MPC £70 and MEC £30. To improve resource allocation, government should",
+        ["tax X and subsidise Y.", "tax X and tax Y.", "subsidise X and tax Y.", "subsidise X and subsidise Y."], "A",
+        "For X, MSC = £290 and MSB = £250, so external cost exceeds external benefit and output should be reduced by a tax. For Y, MSB = £110 and MSC = £100, so output should be increased by a subsidy.", "externality-table");
+
+      add("D", "spec", "14", "Property rights",
+        "The lack of clearly defined property rights in a country is most likely to lead to",
+        [
+          "overproduction of merit goods.",
+          "equality of private costs with social costs.",
+          "overuse of scarce natural resources.",
+          "an efficient allocation of resources."
+        ], "C",
+        "Without enforceable ownership, users may not bear the full cost of depleting a shared resource and have an incentive to take as much as possible. This can cause overuse.");
+
+      add("D", "2017", "12", "Tragedy of the commons",
+        "The tragedy of the commons can be applied to the fishing industry. What is the nature of this market failure?",
+        [
+          "Over-fishing resulting in declining fish populations",
+          "The imposition of fishing quotas by the European Union",
+          "The positive externalities associated with fish consumption",
+          "The third-party effects on dolphins as a result of tuna fishing"
+        ], "A",
+        "Fish stocks are rival but difficult to exclude fishers from using. Each fisher has an incentive to catch more before others do, leading collectively to over-fishing and depletion.");
+
+      add("D", "2018", "1", "Merit goods",
+        "Which one of the following applies to merit goods?",
+        [
+          "Their marginal private benefit is greater than their marginal social benefit.",
+          "They are likely to be provided by the market.",
+          "They can only be supplied by the government.",
+          "They have the characteristics of non-excludability and non-rivalry."
+        ], "B",
+        "Merit goods can be provided through markets, but they tend to be underconsumed because consumers undervalue benefits or lack information. Non-excludability and non-rivalry describe pure public goods.");
+
+      add("D", "2018", "6", "Government intervention",
+        "Which one of the following provides a reason for government intervention in a market?",
+        [
+          "Firms in an oligopolistic market may limit price competition.",
+          "Market failures can only be corrected by using regulations.",
+          "Monopolistically competitive firms earn abnormal profits in the long run.",
+          "Public goods are excludable and rival."
+        ], "A",
+        "Limited price competition can create market power, higher prices and allocative inefficiency, giving a possible case for competition policy. The other statements are false.");
+
+      add("D", "2019", "3", "Complete market failure",
+        "Which one of the following is most likely to result in complete market failure?",
+        [
+          "Negative externalities in production and consumption",
+          "Non-excludability and no enforceable property rights",
+          "The existence of demerit goods in some markets",
+          "The government setting maximum prices for excludable and rival goods"
+        ], "B",
+        "If non-payers cannot be excluded and property rights cannot be enforced, suppliers may be unable to charge. The market may provide none of the good, creating complete market failure.");
+
+      add("D", "2019", "12", "Negative consumption externality",
+        "Negative externalities in consumption cause a misallocation of resources because, at the free-market output,",
+        [
+          "marginal private benefit is greater than marginal private cost.",
+          "marginal private cost is greater than marginal social cost.",
+          "marginal social benefit is less than marginal social cost.",
+          "marginal social cost is less than marginal private benefit."
+        ], "C",
+        "Consumers ignore external costs, so MPB exceeds MSB. At market equilibrium MPB = MPC; if MSC = MPC, then MSB is below MSC. Output is therefore above the social optimum.");
+
+      add("D", "2020", "16", "Private and public goods",
+        "Which one of the following distinguishes a private good from a pure public good?",
+        [
+          "A private good can only be provided by private firms.",
+          "Consumption of a private good creates negative externalities for other consumers.",
+          "Consumers of a private good have full knowledge of production externalities.",
+          "One person’s consumption of a private good reduces the amount available for others."
+        ], "D",
+        "Private goods are rival: one person’s consumption leaves less for others. Pure public goods are non-rival and non-excludable. Governments can provide private goods as well as public goods.");
+
+      add("D", "2020", "18", "Correcting market failure",
+        "Which government policy is most likely to reduce market failure and improve resource allocation?",
+        [
+          "A higher tax rate on all profit-making firms",
+          "A minimum price for demerit goods above their free-market price",
+          "Free-market pricing for public goods",
+          "Subsidies to all loss-making firms to maintain full employment"
+        ], "B",
+        "A binding minimum price raises the price of a demerit good and can reduce overconsumption towards the socially efficient quantity. The other policies are not targeted at the relevant market failure.");
+
+      add("D", "2021", "8", "Free-rider problem",
+        "The free-rider problem means government intervention is necessary to prevent market failure in the supply of",
+        ["inferior goods.", "merit goods.", "private goods.", "public goods."], "D",
+        "Pure public goods are non-excludable, so people can benefit without paying. Firms may then be unable to collect enough revenue to supply the good, creating the free-rider problem.");
+
+      add("D", "2022", "7", "Property rights and pollution",
+        "Why is the extension of property rights likely to reduce market failure?",
+        [
+          "Merit goods will no longer be underconsumed.",
+          "Producers will be more likely to have to pay compensation for pollution.",
+          "Public goods will no longer face the free-rider problem.",
+          "Income and wealth inequality will be reduced."
+        ], "B",
+        "Clear property rights make it easier for those harmed by pollution to claim compensation. This internalises more of the external cost in producers’ decisions.");
+
+      add("D", "2025", "6", "Tax and positive externalities",
+        "Which policy is most likely to indicate that a government is trying to cause a significant change in the pattern of economic activity?",
+        [
+          "A reduction in the tax rate on retirement-pension income",
+          "A reduction in tax on a good with positive consumption externalities",
+          "An increase in inheritance tax",
+          "An increase in tax on a good with very inelastic demand"
+        ], "B",
+        "A tax reduction lowers the price of a good with positive consumption externalities, encouraging a substantial rise in consumption towards the social optimum. A tax on very inelastic demand changes revenue more than activity.");
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (character) => ({
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+        })[character]);
+      }
+
+      function figure(svg, caption) {
+        return `<div class="question-visual"><figure class="diagram">${svg}<figcaption>${caption}</figcaption></figure></div>`;
+      }
+
+      function axes(content, ariaLabel) {
+        return `<svg viewBox="0 0 560 300" role="img" aria-label="${ariaLabel}">
+          <line class="chart-axis" x1="62" y1="250" x2="520" y2="250"/>
+          <line class="chart-axis" x1="62" y1="250" x2="62" y2="24"/>
+          ${content}
+        </svg>`;
+      }
+
+      function visualFor(type) {
+        const redrawn = "Equivalent redraw of the information in the official question; not the original AQA artwork.";
+        const demandRight = axes(`
+          <path class="chart-demand" d="M130 50 L420 226"/><path class="chart-demand" d="M205 50 L495 226"/>
+          <path class="chart-supply" d="M130 225 L420 50"/>
+          <line class="chart-dash" x1="62" y1="138" x2="275" y2="138"/><line class="chart-dash" x1="275" y1="138" x2="275" y2="250"/>
+          <line class="chart-dash" x1="62" y1="115" x2="312" y2="115"/><line class="chart-dash" x1="312" y1="115" x2="312" y2="250"/>
+          <circle class="chart-point" cx="275" cy="138" r="6"/><circle class="chart-point" cx="312" cy="115" r="6"/>
+          <text class="chart-label" x="415" y="222">D1</text><text class="chart-label" x="490" y="222">D2</text>
+          <text class="chart-label" x="416" y="52">S</text><text class="chart-label" x="282" y="151">E1</text><text class="chart-label" x="319" y="109">E2</text>
+          <text class="chart-small" x="34" y="143">P1</text><text class="chart-small" x="34" y="120">P2</text>
+          <text class="chart-small" x="440" y="280">Quantity</text><text class="chart-small" x="18" y="45">Price</text>`, "Demand shifts right along an upward-sloping supply curve");
+        switch (type) {
+          case "spec-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M62 48 C397.781 146.665 397.781 146.665 500 250"/>
+              <line class="chart-dash" x1="62" y1="102.86" x2="245.669" y2="102.86"/><line class="chart-dash" x1="245.669" y1="102.86" x2="245.669" y2="250"/>
+              <line class="chart-dash" x1="62" y1="152.189" x2="378.912" y2="152.189"/><line class="chart-dash" x1="378.912" y1="152.189" x2="378.912" y2="250"/>
+              <line class="chart-dash" x1="62" y1="203.857" x2="453.048" y2="203.857"/><line class="chart-dash" x1="453.048" y1="203.857" x2="453.048" y2="250"/>
+              <circle class="chart-point" cx="245.669" cy="102.86" r="6"/><circle class="chart-point" cx="378.912" cy="152.189" r="6"/><circle class="chart-point" cx="453.048" cy="203.857" r="6"/>
+              <text class="chart-label" x="254.669" y="97.86">X</text><text class="chart-label" x="387.912" y="147.189">Y</text><text class="chart-label" x="462.048" y="198.857">Z</text>
+              <text class="chart-small" x="45" y="106.86">60</text><text class="chart-small" x="45" y="156.189">40</text><text class="chart-small" x="45" y="207.857">20</text>
+              <text class="chart-small" x="238.669" y="268">40</text><text class="chart-small" x="371.912" y="268">75</text><text class="chart-small" x="446.048" y="268">90</text><text class="chart-small" x="492" y="268">100</text>
+              <text class="chart-small" x="445" y="289">Barley</text><text class="chart-small" transform="translate(18 95) rotate(-90)">Wheat</text>`, "Wheat and barley production possibility boundary"), redrawn);
+          case "inside-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M90 55 C300 58 475 122 500 240"/>
+              <line class="chart-dash" x1="300" y1="160" x2="300" y2="104.375"/><line class="chart-dash" x1="300" y1="104.375" x2="364.375" y2="104.375"/>
+              <circle cx="300" cy="160" r="6" fill="var(--red)" stroke="white" stroke-width="2"/><circle class="chart-point" cx="364.375" cy="104.375" r="6"/>
+              <text class="chart-label" x="285" y="180">X</text><text class="chart-small" x="268" y="195">inside PPF</text><text class="chart-label" x="372" y="98">Y</text>
+              <text class="chart-small" x="430" y="282">Capital goods</text><text class="chart-small" transform="translate(18 120) rotate(-90)">Consumer goods</text>`, "X intentionally lies inside the PPF; Y lies on the boundary"), redrawn);
+          case "labelled-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M62 55 C323.838 120.241 323.838 120.241 485 250"/>
+              <line class="chart-dash" x1="62" y1="105" x2="250" y2="105"/><line class="chart-dash" x1="250" y1="105" x2="250" y2="250"/>
+              <line class="chart-dash" x1="62" y1="165" x2="375" y2="165"/><line class="chart-dash" x1="375" y1="165" x2="375" y2="250"/>
+              <text class="chart-label" x="238" y="98">K</text><text class="chart-label" x="382" y="160">L</text>
+              <text class="chart-small" x="38" y="109">G2</text><text class="chart-small" x="38" y="169">G1</text>
+              <text class="chart-small" x="240" y="269">H2</text><text class="chart-small" x="365" y="269">H1</text><text class="chart-small" x="480" y="269">H</text>
+              <text class="chart-small" x="430" y="289">Consumer goods</text><text class="chart-small" transform="translate(17 120) rotate(-90)">Capital goods</text>`, "PPF with initial point L and final point K"), redrawn);
+          case "slope-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M62 40 C419.668 108.655 419.668 108.655 500 250"/>
+              <line class="chart-dash" x1="62" y1="84.333" x2="280.446" y2="84.333"/><line class="chart-dash" x1="280.446" y1="84.333" x2="280.446" y2="250"/>
+              <line class="chart-dash" x1="62" y1="121.429" x2="392.351" y2="121.429"/><line class="chart-dash" x1="392.351" y1="121.429" x2="392.351" y2="250"/>
+              <line class="chart-dash" x1="62" y1="166.983" x2="447.784" y2="166.983"/><line class="chart-dash" x1="447.784" y1="166.983" x2="447.784" y2="250"/>
+              <circle class="chart-point" cx="280.446" cy="84.333" r="6"/><circle class="chart-point" cx="392.351" cy="121.429" r="6"/><circle class="chart-point" cx="447.784" cy="166.983" r="6"/>
+              <text class="chart-label" x="288.446" y="78.333">X</text><text class="chart-label" x="400.351" y="115.429">Y</text><text class="chart-label" x="455.784" y="160.983">Z</text>
+              <text class="chart-small" x="38" y="44">500</text><text class="chart-small" x="38" y="88.333">400</text><text class="chart-small" x="38" y="125.429">300</text><text class="chart-small" x="38" y="170.983">200</text>
+              <text class="chart-small" x="269.446" y="269">150</text><text class="chart-small" x="381.351" y="269">225</text><text class="chart-small" x="436.784" y="269">265</text><text class="chart-small" x="489" y="269">300</text>
+              <text class="chart-small" x="420" y="288">Consumer goods</text><text class="chart-small" transform="translate(18 115) rotate(-90)">Capital goods</text>`, "Concave PPF with X, Y and Z"), redrawn);
+          case "cars-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M90 55 C345.748 115.287 345.748 115.287 495 238"/>
+              <circle class="chart-point" cx="330" cy="122" r="6"/><circle class="chart-point" cx="410" cy="170" r="6"/>
+              <line class="chart-dash" x1="62" y1="122" x2="330" y2="122"/><line class="chart-dash" x1="330" y1="122" x2="330" y2="250"/>
+              <line class="chart-dash" x1="62" y1="170" x2="410" y2="170"/><line class="chart-dash" x1="410" y1="170" x2="410" y2="250"/>
+              <text class="chart-label" x="338" y="116">A</text><text class="chart-label" x="418" y="164">B</text>
+              <text class="chart-small" x="390" y="287">Electric-powered cars</text><text class="chart-small" transform="translate(16 150) rotate(-90)">Petrol-powered cars</text>`, "Both A and B lie on the industry PPF"), redrawn);
+          case "public-private-ppf":
+            return figure(axes(`
+              <path class="chart-accent" d="M62 55 C339.52 122.183 339.52 122.183 500 250"/>
+              <circle class="chart-point" cx="350" cy="142" r="6"/><circle class="chart-point" cx="430" cy="195" r="6"/>
+              <line class="chart-dash" x1="62" y1="142" x2="350" y2="142"/><line class="chart-dash" x1="350" y1="142" x2="350" y2="250"/>
+              <line class="chart-dash" x1="62" y1="195" x2="430" y2="195"/><line class="chart-dash" x1="430" y1="195" x2="430" y2="250"/>
+              <text class="chart-label" x="358" y="136">Y</text><text class="chart-label" x="438" y="189">Z</text>
+              <text class="chart-small" x="43" y="146">S</text><text class="chart-small" x="43" y="199">T</text><text class="chart-small" x="344" y="269">V</text><text class="chart-small" x="424" y="269">W</text>
+              <text class="chart-small" x="398" y="289">Public-sector output</text><text class="chart-small" transform="translate(17 150) rotate(-90)">Private-sector output</text>`, "Reallocation from Y to Z on the PPF"), redrawn);
+          case "demand-right":
+            return figure(demandRight, redrawn);
+          case "supply-right":
+            return figure(axes(`
+              <path class="chart-demand" d="M155 45 L465 225"/><path class="chart-supply" d="M190 225 L430 55"/><path class="chart-supply" d="M270 225 L510 55"/>
+              <text class="chart-label" x="456" y="221">D</text><text class="chart-label" x="420" y="56">S1</text><text class="chart-label" x="500" y="56">S2</text>
+              <text class="chart-small" x="445" y="282">Quantity</text><text class="chart-small" x="18" y="45">Price</text>`, "A rightward supply shift lowers price and raises quantity"), redrawn);
+          case "resource-reallocation":
+            return figure(`<svg viewBox="0 0 700 300" role="img" aria-label="Demand for carrots rises and supply of potatoes falls">
+              <line class="chart-axis" x1="45" y1="250" x2="325" y2="250"/><line class="chart-axis" x1="45" y1="250" x2="45" y2="35"/>
+              <path class="chart-demand" d="M90 65 L295 220"/><path class="chart-demand" d="M140 65 L345 220"/><path class="chart-supply" d="M80 220 L290 65"/>
+              <text class="chart-label" x="120" y="25">Carrots: demand rises</text>
+              <line class="chart-axis" x1="395" y1="250" x2="675" y2="250"/><line class="chart-axis" x1="395" y1="250" x2="395" y2="35"/>
+              <path class="chart-demand" d="M440 65 L645 220"/><path class="chart-supply" d="M430 220 L640 65"/><path class="chart-supply" d="M390 220 L600 65"/>
+              <text class="chart-label" x="465" y="25">Potatoes: supply falls</text>
+            </svg>`, redrawn);
+          case "joint-supply":
+            return figure(`<svg viewBox="0 0 700 300" role="img" aria-label="Demand for X rises and supply of Y rises">
+              <line class="chart-axis" x1="45" y1="250" x2="325" y2="250"/><line class="chart-axis" x1="45" y1="250" x2="45" y2="35"/>
+              <path class="chart-demand" d="M90 65 L295 220"/><path class="chart-demand" d="M140 65 L345 220"/><path class="chart-supply" d="M80 220 L290 65"/>
+              <text class="chart-label" x="110" y="25">Good X: demand rises</text>
+              <line class="chart-axis" x1="395" y1="250" x2="675" y2="250"/><line class="chart-axis" x1="395" y1="250" x2="395" y2="35"/>
+              <path class="chart-demand" d="M440 65 L645 220"/><path class="chart-supply" d="M430 220 L640 65"/><path class="chart-supply" d="M480 220 L690 65"/>
+              <text class="chart-label" x="465" y="25">Good Y: supply rises</text>
+            </svg>`, redrawn);
+          case "rent-shortage":
+            return figure(axes(`
+              <path class="chart-demand" d="M150 50 L440 220"/><path class="chart-supply" d="M150 220 L440 50"/>
+              <line class="chart-dash" x1="62" y1="185" x2="475" y2="185"/><text class="chart-small" x="38" y="189">R1</text>
+              <text class="chart-label" x="430" y="218">D</text><text class="chart-label" x="430" y="52">S</text>
+              <text class="chart-small" x="420" y="282">Rented houses</text><text class="chart-small" x="12" y="45">Rent</text>`, "R1 is below equilibrium, so quantity demanded exceeds quantity supplied"), redrawn);
+          case "trade-ppfs":
+            return figure(axes(`
+              <path class="chart-accent" d="M62 55 L400 250"/><path class="chart-demand" d="M62 95 L500 250"/>
+              <text class="chart-label" x="195" y="116">Country X</text><text class="chart-label" x="350" y="174">Country Y</text>
+              <text class="chart-small" x="42" y="59">80</text><text class="chart-small" x="42" y="99">60</text><text class="chart-small" x="390" y="269">110</text><text class="chart-small" x="490" y="269">150</text>
+              <text class="chart-small" x="430" y="288">Rowing boats</text><text class="chart-small" transform="translate(17 90) rotate(-90)">Canoes</text>`, "Linear PPFs for countries X and Y"), redrawn);
+          case "revenue-curves":
+            return figure(axes(`
+              <path class="chart-demand" d="M92 48 L470 220"/><path class="chart-accent" d="M92 48 L330 250"/>
+              <line class="chart-dash" x1="62" y1="142" x2="298" y2="142"/><line class="chart-dash" x1="298" y1="142" x2="298" y2="250"/>
+              <text class="chart-label" x="466" y="219">D = AR</text><text class="chart-label" x="325" y="241">MR</text><text class="chart-small" x="39" y="146">P1</text><text class="chart-small" x="289" y="269">Q1</text>
+              <text class="chart-small" x="440" y="282">Quantity</text><text class="chart-small" x="28" y="42">£</text>`, "Demand and marginal revenue curves"), redrawn);
+          case "scarves-demand":
+            return figure(axes(`
+              <path class="chart-demand" d="M110 25 L470 205"/>
+              <line class="chart-dash" x1="62" y1="125" x2="310" y2="125"/><line class="chart-dash" x1="310" y1="125" x2="310" y2="250"/>
+              <line class="chart-dash" x1="62" y1="155" x2="370" y2="155"/><line class="chart-dash" x1="370" y1="155" x2="370" y2="250"/>
+              <text class="chart-small" x="40" y="129">30</text><text class="chart-small" x="40" y="159">25</text><text class="chart-small" x="298" y="269">100</text><text class="chart-small" x="358" y="269">110</text>
+              <text class="chart-small" x="440" y="282">Quantity</text><text class="chart-small" x="18" y="45">Price</text>`, "Straight-line demand curve with the two stated price-quantity combinations"), redrawn);
+          case "gini-table":
+            return `<div class="question-visual"><table class="compact-table"><thead><tr><th>Year</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th></tr></thead><tbody><tr><th>Gini coefficient</th><td>0.60</td><td>0.55</td><td>0.50</td><td>0.45</td><td>0.40</td></tr></tbody></table></div>`;
+          case "oranges-table":
+            return `<div class="question-visual"><table class="compact-table"><thead><tr><th>Price (p)</th><th>Supply (000s)</th><th>Initial demand (000s)</th></tr></thead><tbody><tr><td>10</td><td>100</td><td>125</td></tr><tr><td>15</td><td>120</td><td>120</td></tr><tr><td>20</td><td>122</td><td>108</td></tr><tr><td>25</td><td>125</td><td>100</td></tr><tr><td>30</td><td>128</td><td>88</td></tr></tbody></table></div>`;
+          case "externality-table":
+            return `<div class="question-visual"><table class="compact-table"><thead><tr><th>At free-market equilibrium (£)</th><th>Product X</th><th>Product Y</th></tr></thead><tbody><tr><td>Marginal private benefit</td><td>200</td><td>70</td></tr><tr><td>Marginal external benefit</td><td>50</td><td>40</td></tr><tr><td>Marginal private cost</td><td>200</td><td>70</td></tr><tr><td>Marginal external cost</td><td>90</td><td>30</td></tr></tbody></table></div>`;
+          default:
+            return "";
+        }
+      }
+
+      function renderQuestion(question, index) {
+        const paper = papers[question.series];
+        const options = question.options.map((option, optionIndex) => {
+          const letter = String.fromCharCode(65 + optionIndex);
+          return `<label class="option"><input type="radio" name="${question.id}" value="${letter}"><span><strong>${letter}</strong> ${escapeHtml(option)}</span></label>`;
+        }).join("");
+        const sourceNote = paper.note ? `<span> · ${escapeHtml(paper.note)}</span>` : "";
+        return `<article class="practice mcq" id="${question.id}" data-question="${question.id}" data-answer="${question.answer}">
+          <div class="question-meta"><span class="question-id">${paper.label} · Q${question.number}<span class="question-sequence">${index + 1} of ${questions.length}</span></span><span>1 mark · ${escapeHtml(question.topic)}</span></div>
+          <p class="question-text">${escapeHtml(question.stem)}</p>
+          ${visualFor(question.visual)}
+          <div class="options">${options}</div>
+          <div class="answer-actions"><button class="reveal-button" type="button" disabled>Check answer</button><span class="lock-note">Select an answer first</span></div>
+          <div class="answer-panel" hidden>
+            <p class="answer-key">Official answer: ${question.answer}</p>
+            <p>${escapeHtml(question.explanation)}</p>
+            <p class="official-link"><a href="${paper.qp}" target="_blank" rel="noreferrer">Original paper</a> · <a href="${paper.ms}" target="_blank" rel="noreferrer">Mark scheme</a>${sourceNote}</p>
+          </div>
+        </article>`;
+      }
+
+      document.querySelectorAll("[data-bank-group]").forEach((mount) => {
+        const group = mount.dataset.bankGroup;
+        mount.innerHTML = questions
+          .map((question, index) => ({ question, index }))
+          .filter(({ question }) => question.group === group)
+          .map(({ question, index }) => renderQuestion(question, index))
+          .join("");
+      });
+
+      const practices = [...document.querySelectorAll("#questionBank .practice")];
+      const navLinks = [...document.querySelectorAll(".chapter-nav a")];
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+      const defaultState = { answers: {}, revealed: {}, essays: {}, essayDone: {} };
+      let state = loadState();
+
+      function loadState() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+          return {
+            ...defaultState,
+            ...saved,
+            answers: saved.answers || {},
+            revealed: saved.revealed || {},
+            essays: saved.essays || {},
+            essayDone: saved.essayDone || {}
+          };
+        } catch {
+          return { ...defaultState };
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const completed = practices.filter((item) => state.revealed[item.dataset.question]).length;
+        const total = practices.length;
+        progressBar.style.width = `${total ? (completed / total) * 100 : 0}%`;
+        progressText.textContent = `${completed} / ${total} checked`;
+      }
+
+      function markMcq(practice) {
+        const correct = practice.dataset.answer;
+        practice.querySelectorAll(".option").forEach((label) => {
+          const input = label.querySelector("input");
+          label.classList.toggle("correct", input.value === correct);
+          label.classList.toggle("incorrect", input.checked && input.value !== correct);
+        });
+      }
+
+      function essayCanReveal(practice) {
+        const text = practice.querySelector("[data-essay-text]");
+        const done = practice.querySelector("[data-essay-done]");
+        return text.value.trim().length >= 80 && done.checked;
+      }
+
+      function updateEssayGate(practice) {
+        const question = practice.dataset.question;
+        const text = practice.querySelector("[data-essay-text]");
+        const done = practice.querySelector("[data-essay-done]");
+        const countLabel = practice.querySelector("[data-essay-count]");
+        const button = practice.querySelector(".reveal-button");
+        const note = practice.querySelector(".lock-note");
+        const count = text.value.trim().length;
+        const ready = essayCanReveal(practice);
+        countLabel.textContent = `${count} characters${count < 80 ? "; write at least 80 to continue" : "; minimum length reached"}`;
+        if (!state.revealed[question]) {
+          button.disabled = !ready;
+          note.textContent = ready ? "Complete; ready to open" : "Write 80 characters and tick the box";
+        }
+      }
+
+      practices.forEach((practice) => {
+        const question = practice.dataset.question;
+        const button = practice.querySelector(".reveal-button");
+        const panel = practice.querySelector(".answer-panel");
+        const note = practice.querySelector(".lock-note");
+
+        if (practice.classList.contains("mcq")) {
+          const savedAnswer = state.answers[question];
+          if (savedAnswer) {
+            const input = practice.querySelector(`input[value="${savedAnswer}"]`);
+            if (input) input.checked = true;
+            button.disabled = false;
+            note.textContent = "Selected; ready to check";
+          }
+          practice.querySelectorAll('input[type="radio"]').forEach((input) => {
+            input.addEventListener("change", () => {
+              state.answers[question] = input.value;
+              button.disabled = false;
+              note.textContent = "Selected; ready to check";
+              saveState();
+            });
+          });
+        } else {
+          const text = practice.querySelector("[data-essay-text]");
+          const done = practice.querySelector("[data-essay-done]");
+          text.value = state.essays[question] || "";
+          done.checked = Boolean(state.essayDone[question]);
+          text.addEventListener("input", () => {
+            state.essays[question] = text.value;
+            updateEssayGate(practice);
+            saveState();
+          });
+          done.addEventListener("change", () => {
+            state.essayDone[question] = done.checked;
+            updateEssayGate(practice);
+            saveState();
+          });
+          updateEssayGate(practice);
+        }
+
+        button.addEventListener("click", () => {
+          if (practice.classList.contains("essay") && !essayCanReveal(practice)) return;
+          state.revealed[question] = true;
+          panel.hidden = false;
+          button.textContent = "Answer opened";
+          button.disabled = true;
+          note.textContent = "";
+          if (practice.classList.contains("mcq")) markMcq(practice);
+          saveState();
+        });
+
+        if (state.revealed[question]) {
+          panel.hidden = false;
+          button.textContent = "Answer opened";
+          button.disabled = true;
+          note.textContent = "";
+          if (practice.classList.contains("mcq")) markMcq(practice);
+        }
+      });
+
+      updateProgress();
+
+      document.getElementById("resetProgress").addEventListener("click", () => {
+        if (!window.confirm("Clear all 44 saved answers and opened mark schemes?")) return;
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.reload();
+      });
+
+      const observedSections = [...document.querySelectorAll("[data-nav]")];
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`);
+        });
+      }, { rootMargin: "-115px 0px -65% 0px", threshold: [0.05, 0.2, 0.5] });
+      observedSections.forEach((section) => observer.observe(section));
+    })();
+  </script>
+</body>
+</html>
